@@ -28,7 +28,7 @@
       --text-secondary:    #A0AABF;
       --border-color:      #1A2035;
       --tadarab-primary:   #BE1622;
-      --tadarab-secondary: #60D2B4;
+      --tadarab-secondary: #D4A843;
       --tadarab-bg:        #00040D;
       --font-ar:  'Almarai', sans-serif;
       --font-en:  'Space Grotesk', sans-serif;
@@ -377,24 +377,31 @@
     .inst-laptop-col { position: relative; }
     .monitor-wrap { display: flex; flex-direction: column; align-items: center; animation: monitorFloat 6s ease-in-out infinite; position: relative; z-index: 2; will-change: transform; width: 100%; }
     @keyframes monitorFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-    .laptop-real { position: relative; display: inline-block; width: 100%; }
+    .laptop-real { position: relative; display: inline-block; width: 100%; overflow: hidden; }
     .laptop-frame { width: 100%; height: auto; display: block; position: relative; z-index: 2; pointer-events: none; filter: drop-shadow(0 28px 70px rgba(0,0,0,0.75)); }
-    .laptop-screen-area { position: absolute; top: 6.5%; left: 11.5%; width: 77%; height: 55%; overflow: hidden; z-index: 1; }
+    .laptop-screen-area { position: absolute; top: 28.3%; left: 16.9%; width: 66.3%; height: 41.3%; overflow: hidden; z-index: 1; border-radius: 2px; }
     .monitor-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .screen-scanlines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.08) 3px,rgba(0,0,0,0.08) 4px); pointer-events: none; z-index: 2; mix-blend-mode: overlay; }
     .screen-vignette { position: absolute; inset: 0; box-shadow: inset 0 0 70px rgba(0,0,0,0.55); pointer-events: none; z-index: 3; }
-    .screen-exp-badge { position: absolute; background: rgba(0,4,13,0.72); backdrop-filter: blur(14px); border: 1px solid rgba(96,210,180,0.32); border-radius: 10px; padding: 8px 14px; z-index: 5; text-align: center; }
+    .screen-exp-badge { position: absolute; background: rgba(0,4,13,0.72); backdrop-filter: blur(14px); border: 1px solid rgba(212,168,67,0.32); border-radius: 10px; padding: 8px 14px; z-index: 5; text-align: center; }
     .screen-exp-num   { font-size: clamp(18px,2.5vw,26px); font-weight: 900; color: var(--tadarab-secondary); font-family: var(--font-en); line-height: 1; display: block; }
     .screen-exp-label { font-size: clamp(9px,1vw,11px); color: rgba(255,255,255,0.55); display: block; white-space: nowrap; margin-top: 2px; }
-    .screen-name-overlay { position: absolute; left: 0; right: 0; background: linear-gradient(to top,rgba(0,4,13,0.97) 0%,rgba(0,4,13,0.72) 55%,transparent 100%); padding: 36px 20px 14px; z-index: 4; }
+    .screen-name-overlay { position: absolute; left: 0; right: 0; background: linear-gradient(to top,rgba(0,4,13,0.97) 0%,rgba(0,4,13,0.72) 55%,transparent 100%); padding: 36px 20px 14px; z-index: 4; direction: rtl; text-align: right; }
     .screen-name  { font-size: clamp(14px,2vw,22px); font-weight: 800; color: #fff; display: block; margin-bottom: 3px; }
     .screen-role  { font-size: clamp(10px,1.2vw,13px); color: var(--tadarab-secondary); font-weight: 700; display: block; margin-bottom: 8px; }
-    .screen-tags  { display: flex; gap: 4px; flex-wrap: wrap; }
+    .screen-tags  { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
     .screen-tag   { background: rgba(212,168,67,0.2); border: 1px solid rgba(212,168,67,0.38); color: rgba(255,255,255,0.82); font-size: clamp(8px,0.8vw,10px); font-family: var(--font-en); font-weight: 600; padding: 2px 7px; border-radius: 20px; letter-spacing: 0.4px; }
     .laptop-real .screen-exp-badge    { top: calc(6.5% + 10px); right: calc(11.5% + 10px); }
     .laptop-real .screen-name-overlay { bottom: 38.5%; left: 11.5%; right: 11.5%; }
     /* Instructor bio content */
     .inst-content-col { direction: rtl; text-align: right; }
+    .inst-name-block { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .inst-name-row { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+    .inst-name { font-size: clamp(22px,2.8vw,34px); font-weight: 900; color: #fff; margin: 0; }
+    .inst-exp-pill { display: flex; flex-direction: column; align-items: center; background: rgba(0,4,13,0.72); border: 1px solid rgba(212,168,67,0.32); border-radius: 10px; padding: 6px 12px; flex-shrink: 0; }
+    .inst-exp-num { font-size: 20px; font-weight: 900; color: var(--tadarab-secondary); font-family: var(--font-en); line-height: 1; }
+    .inst-exp-label { font-size: 10px; color: rgba(255,255,255,0.5); white-space: nowrap; margin-top: 2px; }
+    .inst-role-line { font-size: clamp(13px,1.3vw,15px); color: var(--tadarab-secondary); font-weight: 700; margin: 0; }
     .inst-bio-para { font-size: clamp(14px,1.3vw,16px); color: var(--text-secondary); line-height: 1.9; margin-bottom: 20px; }
     .inst-certs-intro { font-size: clamp(13px,1.1vw,14px); color: var(--text-secondary); margin-bottom: 14px; font-weight: 600; }
     .inst-certs-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; padding: 0; }
@@ -997,27 +1004,21 @@
             <div class="laptop-real">
               <div class="laptop-screen-area">
                 <img src="photo.webp" class="monitor-photo" alt="محمد بن عسكر">
-                <div class="screen-scanlines"></div>
                 <div class="screen-vignette"></div>
               </div>
               <img class="laptop-frame" src="laptop-realistic.png" alt="">
-              <div class="screen-exp-badge">
-                <span class="screen-exp-num">18+</span>
-                <span class="screen-exp-label">سنة خبرة</span>
-              </div>
-              <div class="screen-name-overlay">
-                <span class="screen-name">محمد بن عسكر</span>
-                <span class="screen-role">مدرب وخبير في إدارة المشاريع</span>
-                <div class="screen-tags">
-                  <span class="screen-tag">PMP</span><span class="screen-tag">PgMP</span><span class="screen-tag">PfMP</span>
-                  <span class="screen-tag">PMI-ACP</span><span class="screen-tag">PMI-RMP</span><span class="screen-tag">PMI-SP</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
         <!-- Right: Bio content -->
         <div class="inst-content-col">
+          <div class="inst-name-block">
+            <div class="inst-name-row">
+              <h3 class="inst-name">محمد بن عسكر</h3>
+              <span class="inst-exp-pill"><span class="inst-exp-num">18+</span><span class="inst-exp-label">سنة خبرة</span></span>
+            </div>
+            <p class="inst-role-line">مدرب وخبير في إدارة المشاريع</p>
+          </div>
           <p class="inst-bio-para">مدرب وخبير في إدارة المشاريع يتمتع بخبرة مهنية تزيد على 18 عاماً في قيادة وإدارة كبرى المشاريع والبرامج والمحافظ الاستراتيجية. قدّم العديد من الدورات التدريبية المتخصصة في إدارة المشاريع وأسهم في تأهيل وتمكين مئات المتدربين على تبنّي أفضل الممارسات العالمية.</p>
           <p class="inst-certs-intro">يحمل مجموعة متميزة من الشهادات العالمية المعتمدة من معهد إدارة المشاريع (PMI):</p>
           <ul class="inst-certs-list">
