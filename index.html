@@ -527,6 +527,157 @@
     @media (min-width: 768px) and (max-width: 1023px) {
       .responsive-nav { padding: 20px 48px !important; }
     }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       HERO-MATCHING OVERRIDES — Pure black / premium Web3 aesthetic
+    ═══════════════════════════════════════════════════════════════════ */
+
+    /* ── Backgrounds: pure black throughout ── */
+    .tadarab-body-bg {
+      background-color: #000 !important;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px) !important;
+      background-size: 60px 60px !important;
+    }
+    .stats-bar       { background: rgba(255,255,255,0.025) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .cert-section    { background: rgba(255,255,255,0.015) !important; }
+    .pricing-section { background: transparent !important; border-color: rgba(255,255,255,0.06) !important; }
+    .final-cta       { background: #000 !important; }
+    .footer          { background: #000 !important; border-color: rgba(255,255,255,0.06) !important; }
+
+    /* ── Section headings: gradient text (same as hero) ── */
+    .section h2,
+    .section-title-wrap h2,
+    .pricing-section h2,
+    .final-cta h2,
+    .cert-heading {
+      background: linear-gradient(144.5deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.3) 110%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+    /* Cert highlight: match hero gradient (slightly dimmer for visual contrast) */
+    .cert-highlight {
+      background: linear-gradient(144.5deg, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.45) 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+
+    /* ── Section title accent: subtle white line ── */
+    .section-title-accent { background: rgba(255,255,255,0.25) !important; }
+
+    /* ── Stats numbers: white instead of gold ── */
+    .stat-num { color: #fff !important; }
+    .stat-label-ar { color: rgba(255,255,255,0.5) !important; font-size: 16px !important; }
+    .stat-item:not(:last-child)::after { background: rgba(255,255,255,0.08) !important; }
+
+    /* ── Learn cards: glass style ── */
+    .learn-card-body h3 { color: rgba(255,255,255,0.92) !important; }
+    .learn-card-body p  { color: rgba(255,255,255,0.45) !important; }
+
+    /* ── Curriculum cards: glass panels ── */
+    .curr-grid .learn-card {
+      background: rgba(255,255,255,0.03) !important;
+      border: 1px solid rgba(255,255,255,0.07) !important;
+      backdrop-filter: blur(10px);
+    }
+    .curr-grid .learn-card:hover {
+      background: rgba(255,255,255,0.05) !important;
+      border-color: rgba(255,255,255,0.14) !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8) !important;
+    }
+    .curr-chapter-label { color: rgba(255,255,255,0.4) !important; }
+    .curr-grid .learn-card-body h3 { color: #fff !important; font-size: 17px !important; }
+    .curr-card-desc { color: rgba(255,255,255,0.45) !important; }
+    .curr-card-time { color: rgba(255,255,255,0.3) !important; }
+    .curr-summary   { color: rgba(255,255,255,0.4) !important; }
+    .curr-summary strong { color: rgba(255,255,255,0.75) !important; }
+
+    /* ── Certificate section ── */
+    .cert-eyebrow { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.7) !important; }
+    .cert-desc    { color: rgba(255,255,255,0.5) !important; }
+    .cert-benefits li { color: rgba(255,255,255,0.75) !important; }
+    .cert-check { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.15) !important; color: rgba(255,255,255,0.8) !important; }
+    .cert-glow { background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%) !important; }
+    .cert-shadow-stack::before, .cert-shadow-stack::after { background: rgba(255,255,255,0.04) !important; }
+
+    /* ── Instructor monitor: transparent grid glow ── */
+    .monitor-grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px) !important;
+    }
+    .monitor-ambient {
+      background: radial-gradient(ellipse at 50% 65%, rgba(255,255,255,0.05) 0%, rgba(190,22,34,0.04) 45%, transparent 70%) !important;
+    }
+    .screen-tag { background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.65) !important; }
+    .screen-exp-badge { background: rgba(0,0,0,0.75) !important; border-color: rgba(255,255,255,0.1) !important; }
+    .screen-exp-num { color: #fff !important; }
+    .inst-bio-inner > p { color: rgba(255,255,255,0.5) !important; font-size: 18px !important; }
+
+    /* ── Pricing card: glass panel ── */
+    .price-card.highlight {
+      background: rgba(255,255,255,0.03) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      box-shadow: 0 0 80px rgba(255,255,255,0.02), 0 40px 80px rgba(0,0,0,0.8) !important;
+      transform: none !important;
+    }
+    .price-badge { background: rgba(255,255,255,0.1) !important; color: rgba(255,255,255,0.8) !important; }
+    .price-title { color: rgba(255,255,255,0.5) !important; font-size: 15px !important; font-weight: 500 !important; }
+    .price-features li { color: rgba(255,255,255,0.5) !important; }
+    .price-features li svg { fill: rgba(255,255,255,0.5) !important; }
+
+    /* Pricing CTA → pill button style matching hero */
+    .price-card .btn-tadarab-primary {
+      background: #fff !important;
+      color: #000 !important;
+      border-radius: 9999px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      padding: 14px 32px !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .price-card .btn-tadarab-primary:hover { background: rgba(255,255,255,0.9) !important; transform: none !important; }
+
+    /* ── FAQ: glass panels ── */
+    .faq-item { background: rgba(255,255,255,0.02) !important; border-color: rgba(255,255,255,0.07) !important; }
+    .faq-q { color: rgba(255,255,255,0.85) !important; font-size: 17px !important; }
+    .faq-q:hover { color: #fff !important; }
+    .faq-toggle { color: rgba(255,255,255,0.4) !important; }
+    .faq-item.active .faq-toggle { color: #fff !important; }
+    .faq-a { color: rgba(255,255,255,0.45) !important; }
+
+    /* ── Final CTA ── */
+    .cta-geom { background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%) !important; clip-path: none !important; }
+    .final-cta p { color: rgba(255,255,255,0.4) !important; }
+    .final-cta .btn-tadarab-primary {
+      background: #fff !important; color: #000 !important;
+      border-radius: 9999px !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      padding: 14px 36px !important;
+    }
+
+    /* ── Footer ── */
+    .footer-brand p { color: rgba(255,255,255,0.3) !important; }
+    .footer-social a { border-color: rgba(255,255,255,0.08) !important; color: rgba(255,255,255,0.35) !important; }
+    .footer-social a:hover { color: #fff !important; border-color: rgba(255,255,255,0.35) !important; background: rgba(255,255,255,0.05) !important; }
+    .footer-copy { color: rgba(255,255,255,0.18) !important; }
+
+    /* ── Video section overlay ── */
+    .video-section-title { color: #fff !important; }
+    .video-section-sub   { color: rgba(255,255,255,0.6) !important; }
+
+    /* ── "تدرب" brand text ── */
+    footer svg text { fill: rgba(255,255,255,0.75) !important; }
+
+    /* ── Pricing heading arc underline ── */
+    .au-svg path { stroke: rgba(255,255,255,0.35) !important; }
+    #cta-now-word { color: rgba(255,255,255,0.75) !important; }
+
   </style>
 </head>
 <body>
