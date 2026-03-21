@@ -423,13 +423,41 @@
     /* Divider */
     .inst2-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 24px; }
     /* Certs */
-    .inst2-certs-hd { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; font-family: var(--font-en); }
-    .inst2-certs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; justify-content: flex-end; }
+    .inst2-certs-hd { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-family: var(--font-en); }
+    .inst2-certs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
     .inst2-cert {
+      position: relative; display: inline-flex; align-items: center;
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.78); font-family: var(--font-en);
-      font-weight: 700; font-size: 11px; padding: 6px 14px;
-      border-radius: 9999px; letter-spacing: 0.3px;
+      border-radius: 8px; padding: 6px 12px; cursor: default; transition: all 0.2s;
+    }
+    .inst2-cert:hover {
+      background: rgba(190,22,34,0.15); border-color: rgba(190,22,34,0.5);
+      transform: translateY(-2px);
+    }
+    .inst2-cert-code {
+      font-family: var(--font-en); font-weight: 800; font-size: 12px;
+      color: #fff; letter-spacing: 0.3px; white-space: nowrap;
+    }
+    /* Tooltip */
+    .inst2-cert-tooltip {
+      position: absolute; bottom: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: rgba(8,12,24,0.97); border: 1px solid rgba(190,22,34,0.45);
+      border-radius: 10px; padding: 10px 16px; min-width: 220px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.6); pointer-events: none;
+      opacity: 0; transition: opacity 0.18s, transform 0.18s;
+      z-index: 20; text-align: center;
+    }
+    .inst2-cert:hover .inst2-cert-tooltip {
+      opacity: 1; transform: translateX(-50%) translateY(0);
+    }
+    .inst2-tt-ar {
+      display: block; font-size: 13px; font-weight: 700; color: #fff;
+      font-family: var(--font-ar); margin-bottom: 4px; white-space: nowrap;
+    }
+    .inst2-tt-en {
+      display: block; font-size: 11px; color: rgba(255,255,255,0.4);
+      font-family: var(--font-en); white-space: nowrap;
     }
     /* PMI note */
     .inst2-note {
@@ -719,6 +747,184 @@
     .au-svg path { stroke: rgba(255,255,255,0.35) !important; }
     #cta-now-word { color: rgba(255,255,255,0.9) !important; -webkit-text-fill-color: rgba(255,255,255,0.9) !important; }
 
+    /* ═══════════════════════════════════════════
+       AGILE CYCLE DIAGRAM
+    ════════════════════════════════════════════ */
+    #agile-cycle { overflow: visible; }
+    .cycle-subtitle {
+      text-align: center; color: rgba(255,255,255,0.4);
+      font-size: 16px; margin-top: 14px;
+    }
+    #agile-cycle .section-title-wrap h2 {
+      font-size: clamp(44px, 5.5vw, 64px) !important;
+    }
+    .cycle-viewport {
+      position: relative; width: 100%; max-width: 860px;
+      aspect-ratio: 1; margin: 60px auto 0;
+    }
+    .cycle-ring {
+      position: absolute; inset: 0; will-change: transform;
+    }
+    .cycle-track-svg {
+      position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+    }
+    .cycle-arc {
+      fill: none; stroke: rgba(255,255,255,0.07); stroke-width: 0.4;
+      transition: stroke 0.4s ease, stroke-width 0.4s ease, filter 0.4s ease;
+    }
+    .cycle-arc.arc-active {
+      stroke: rgba(255,255,255,0.35); stroke-width: 0.7;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.15));
+    }
+    .cycle-flow-circle {
+      fill: none; stroke: rgba(255,255,255,0.04); stroke-width: 0.3;
+      stroke-dasharray: 3 5; stroke-dashoffset: 0;
+      animation: cycleFlowDash 18s linear infinite;
+    }
+    .cycle-ring.is-paused .cycle-flow-circle { animation-play-state: paused; }
+    @keyframes cycleFlowDash { to { stroke-dashoffset: -220; } }
+    .cycle-arrow-marker {
+      fill: rgba(255,255,255,0.12); transition: fill 0.35s ease, transform 0.35s ease;
+    }
+    .cycle-arrow-marker.arrow-active { fill: rgba(255,255,255,0.45); }
+
+    /* Center info */
+    .cycle-center {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      text-align: center; z-index: 5; pointer-events: none; width: 200px;
+    }
+    .cycle-center-default, .cycle-center-detail {
+      transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .cycle-center-default { opacity: 1; transform: scale(1); }
+    .cycle-center-detail {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.88); opacity: 0; width: 220px;
+    }
+    .cycle-center.active .cycle-center-default { opacity: 0; transform: scale(0.85); }
+    .cycle-center.active .cycle-center-detail { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .cycle-center-icon {
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 10px; width: 42px; height: 42px; border-radius: 12px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+    }
+    .cycle-center-icon svg { width: 20px; height: 20px; }
+    .cycle-center-label {
+      display: block; font-family: var(--font-en); font-size: 34px; font-weight: 700;
+      background: linear-gradient(144.5deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0.3) 110%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 2px;
+    }
+    .cycle-center-sub {
+      display: block; font-size: 14px; color: rgba(255,255,255,0.3); margin-top: 6px;
+    }
+    .cycle-detail-step {
+      font-family: var(--font-en); font-size: 11px; color: rgba(255,255,255,0.3);
+      letter-spacing: 1.5px; margin-bottom: 8px;
+    }
+    .cycle-detail-title {
+      font-size: 14px; font-weight: 800; color: #fff; line-height: 1.65; margin-bottom: 8px;
+    }
+    .cycle-detail-desc {
+      font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.75;
+    }
+
+    /* Nodes */
+    .cycle-node {
+      position: absolute; left: 50%; top: 50%;
+      width: 114px; margin-left: -57px; margin-top: -44px;
+      z-index: 3; cursor: pointer;
+    }
+    .cycle-node-inner-wrap { will-change: transform; }
+    .cycle-node-card {
+      background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 6px; padding: 14px 8px; position: relative;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.35s ease,
+                  border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .cycle-node:hover .cycle-node-card,
+    .cycle-node.is-active .cycle-node-card {
+      transform: scale(1.13);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 0 30px rgba(255,255,255,0.06), 0 0 60px rgba(255,255,255,0.03);
+    }
+    /* Glow ring */
+    .cycle-node-card::before {
+      content: ''; position: absolute; inset: -18px; border-radius: 30px;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.4s ease; pointer-events: none; z-index: -1;
+    }
+    .cycle-node:hover .cycle-node-card::before,
+    .cycle-node.is-active .cycle-node-card::before { opacity: 1; }
+    /* Pulse ring */
+    .cycle-node-card::after {
+      content: ''; position: absolute; inset: -3px; border-radius: 19px;
+      border: 1px solid rgba(255,255,255,0); transition: border-color 0.35s ease; pointer-events: none;
+    }
+    .cycle-node:hover .cycle-node-card::after,
+    .cycle-node.is-active .cycle-node-card::after {
+      border-color: rgba(255,255,255,0.12);
+      animation: nodePulseRing 2s ease-in-out infinite;
+    }
+    @keyframes nodePulseRing {
+      0%, 100% { border-color: rgba(255,255,255,0.12); transform: scale(1); }
+      50% { border-color: rgba(255,255,255,0.04); transform: scale(1.05); }
+    }
+    .cycle-node-icon {
+      width: 26px; height: 26px; color: rgba(255,255,255,0.55); transition: color 0.3s ease;
+    }
+    .cycle-node-icon svg { width: 100%; height: 100%; }
+    .cycle-node:hover .cycle-node-icon,
+    .cycle-node.is-active .cycle-node-icon { color: #fff; }
+    .cycle-node-label {
+      font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,0.7);
+      text-align: center; line-height: 1.5; transition: color 0.3s ease;
+    }
+    .cycle-node:hover .cycle-node-label,
+    .cycle-node.is-active .cycle-node-label { color: #fff; }
+    .cycle-node-num {
+      position: absolute; top: -7px; right: -7px; width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.45);
+      font-family: var(--font-en); z-index: 4; transition: all 0.3s ease;
+    }
+    .cycle-node:hover .cycle-node-num,
+    .cycle-node.is-active .cycle-node-num {
+      background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .cycle-viewport { max-width: 640px; }
+      .cycle-center { width: 180px; }
+      .cycle-center-label { font-size: 28px; }
+      .cycle-center-detail { width: 200px; }
+      .cycle-detail-title { font-size: 13px; }
+      .cycle-detail-desc { font-size: 11px; }
+    }
+    @media (max-width: 650px) {
+      .cycle-viewport { max-width: 360px; margin-top: 40px; }
+      .cycle-node { width: 84px; margin-left: -42px; margin-top: -36px; }
+      .cycle-node-card { padding: 10px 6px; gap: 4px; border-radius: 12px; }
+      .cycle-node-icon { width: 20px; height: 20px; }
+      .cycle-node-label { font-size: 9.5px; }
+      .cycle-node-num { width: 16px; height: 16px; font-size: 8px; top: -5px; right: -5px; }
+      .cycle-center { width: 110px; }
+      .cycle-center-label { font-size: 20px; }
+      .cycle-center-sub { font-size: 11px; }
+      .cycle-center-icon { width: 32px; height: 32px; border-radius: 10px; }
+      .cycle-center-icon svg { width: 16px; height: 16px; }
+      .cycle-center-detail { width: 140px; }
+      .cycle-detail-step { font-size: 9px; }
+      .cycle-detail-title { font-size: 11px; }
+      .cycle-detail-desc { font-size: 9.5px; }
+      .cycle-subtitle { font-size: 14px; }
+    }
+
   </style>
 </head>
 <body>
@@ -918,6 +1124,154 @@
     </div>
   </section>
 
+  <!-- Agile Cycle Diagram -->
+  <section class="section" id="agile-cycle">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>دورة إدارة المشاريع المرنة</h2>
+        <span class="section-title-accent"></span>
+      </div>
+      <p class="cycle-subtitle">رحلتك في تعلم الأجايل خطوة بخطوة</p>
+
+      <div class="cycle-viewport" id="cycleViewport">
+        <!-- Center info -->
+        <div class="cycle-center" id="cycleCenter">
+          <div class="cycle-center-default">
+            <span class="cycle-center-label">Agile</span>
+            <span class="cycle-center-sub">دورة الأجايل</span>
+          </div>
+          <div class="cycle-center-detail">
+            <div class="cycle-center-icon" id="cycleDetailIcon"></div>
+            <div class="cycle-detail-step" id="cycleDetailStep"></div>
+            <div class="cycle-detail-title" id="cycleDetailTitle"></div>
+            <div class="cycle-detail-desc" id="cycleDetailDesc"></div>
+          </div>
+        </div>
+
+        <!-- Rotating ring -->
+        <div class="cycle-ring" id="cycleRing">
+          <!-- SVG Track -->
+          <svg class="cycle-track-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="35" class="cycle-flow-circle"/>
+            <path class="cycle-arc" data-seg="0" d="M 50 15 A 35 35 0 0 1 74.75 25.25"/>
+            <path class="cycle-arc" data-seg="1" d="M 74.75 25.25 A 35 35 0 0 1 85 50"/>
+            <path class="cycle-arc" data-seg="2" d="M 85 50 A 35 35 0 0 1 74.75 74.75"/>
+            <path class="cycle-arc" data-seg="3" d="M 74.75 74.75 A 35 35 0 0 1 50 85"/>
+            <path class="cycle-arc" data-seg="4" d="M 50 85 A 35 35 0 0 1 25.25 74.75"/>
+            <path class="cycle-arc" data-seg="5" d="M 25.25 74.75 A 35 35 0 0 1 15 50"/>
+            <path class="cycle-arc" data-seg="6" d="M 15 50 A 35 35 0 0 1 25.25 25.25"/>
+            <path class="cycle-arc" data-seg="7" d="M 25.25 25.25 A 35 35 0 0 1 50 15"/>
+          </svg>
+
+          <!-- Node 1: التخطيط -->
+          <div class="cycle-node" data-index="0">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">1</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
+                </div>
+                <div class="cycle-node-label">التخطيط</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 2: قائمة المتطلبات -->
+          <div class="cycle-node" data-index="1">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">2</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                </div>
+                <div class="cycle-node-label">قائمة المتطلبات</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 3: التصميم -->
+          <div class="cycle-node" data-index="2">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">3</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                </div>
+                <div class="cycle-node-label">التصميم</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 4: التطوير -->
+          <div class="cycle-node" data-index="3">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">4</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div class="cycle-node-label">التطوير</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 5: الاختبار -->
+          <div class="cycle-node" data-index="4">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">5</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div class="cycle-node-label">الاختبار</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 6: المراجعة -->
+          <div class="cycle-node" data-index="5">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">6</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="cycle-node-label">المراجعة</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 7: الإطلاق -->
+          <div class="cycle-node" data-index="6">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">7</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><polyline points="5 12 12 5 19 12"/><line x1="5" y1="19" x2="19" y2="19"/></svg>
+                </div>
+                <div class="cycle-node-label">الإطلاق</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 8: التحسين المستمر -->
+          <div class="cycle-node" data-index="7">
+            <div class="cycle-node-inner-wrap">
+              <div class="cycle-node-card">
+                <span class="cycle-node-num">8</span>
+                <div class="cycle-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                </div>
+                <div class="cycle-node-label">التحسين المستمر</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /cycle-ring -->
+      </div><!-- /cycle-viewport -->
+    </div>
+  </section>
+
   <!-- Curriculum -->
   <section class="section" id="curriculum">
     <div class="container">
@@ -1057,13 +1411,13 @@
           <!-- Certifications -->
           <p class="inst2-certs-hd">PMI Certifications</p>
           <div class="inst2-certs">
-            <span class="inst2-cert">PMP</span>
-            <span class="inst2-cert">PgMP</span>
-            <span class="inst2-cert">PfMP</span>
-            <span class="inst2-cert">PMI-ACP</span>
-            <span class="inst2-cert">PMI-RMP</span>
-            <span class="inst2-cert">PMI-SP</span>
-            <span class="inst2-cert">Senior Scrum Master</span>
+            <div class="inst2-cert"><span class="inst2-cert-code">PMP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">مدير المشاريع المحترف</span><span class="inst2-tt-en">Project Management Professional</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">PgMP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف إدارة البرامج</span><span class="inst2-tt-en">Program Management Professional</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">PfMP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف إدارة المحافظ</span><span class="inst2-tt-en">Portfolio Management Professional</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">PMI-ACP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف الممارسات المرنة</span><span class="inst2-tt-en">Agile Certified Practitioner</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">PMI-RMP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف إدارة المخاطر</span><span class="inst2-tt-en">Risk Management Professional</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">PMI-SP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف جدولة المشاريع</span><span class="inst2-tt-en">Scheduling Professional</span></div></div>
+            <div class="inst2-cert"><span class="inst2-cert-code">Senior Scrum Master</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">Disciplined Agile</span></div></div>
           </div>
 
           <!-- PMI Reviewer note -->
@@ -1397,6 +1751,149 @@
     document.body.style.overflow = '';
     if (plyrPlayer) plyrPlayer.pause();
   };
+})();
+</script>
+
+<!-- Agile Cycle Diagram Script -->
+<script>
+(function () {
+  'use strict';
+  var viewport = document.getElementById('cycleViewport');
+  var ring = document.getElementById('cycleRing');
+  var centerEl = document.getElementById('cycleCenter');
+  var detailIcon = document.getElementById('cycleDetailIcon');
+  var detailStep = document.getElementById('cycleDetailStep');
+  var detailTitle = document.getElementById('cycleDetailTitle');
+  var detailDesc = document.getElementById('cycleDetailDesc');
+  if (!viewport || !ring) return;
+
+  var nodeEls = Array.prototype.slice.call(ring.querySelectorAll('.cycle-node'));
+  var innerWraps = Array.prototype.slice.call(ring.querySelectorAll('.cycle-node-inner-wrap'));
+  var arcEls = Array.prototype.slice.call(ring.querySelectorAll('.cycle-arc'));
+  var trackSvg = ring.querySelector('.cycle-track-svg');
+  var arrowEls = [];
+
+  var stepsData = [
+    { title: 'التخطيط (Planning)', desc: 'تحديد أهداف المشروع وبناء خارطة الطريق، وتقسيم العمل إلى Sprints قصيرة مع تحديد الموارد والجداول الزمنية', step: 'STEP 01' },
+    { title: 'قائمة المتطلبات (Product Backlog)', desc: 'جمع متطلبات العميل وترتيبها حسب الأولوية في قائمة المنتج، وكتابة User Stories واضحة وقابلة للتنفيذ', step: 'STEP 02' },
+    { title: 'التصميم (Design)', desc: 'تصميم بنية النظام وتجربة المستخدم قبل التنفيذ، مع الحرص على المرونة في مواجهة التغييرات المستقبلية', step: 'STEP 03' },
+    { title: 'التطوير (Development)', desc: 'تنفيذ Sprint بشكل تعاوني داخل الفريق، وبناء المنتج على شكل تدريجي ومستمر وفق الأولويات المحددة', step: 'STEP 04' },
+    { title: 'الاختبار (Testing)', desc: 'اختبار كل وظيفة بشكل مستمر خلال Sprint وبعده، وضمان جودة المنتج من خلال الاختبارات الآلية واليدوية', step: 'STEP 05' },
+    { title: 'المراجعة (Sprint Review)', desc: 'عرض المنجزات على أصحاب المصلحة والعميل، وجمع الملاحظات لضبط الأولويات وتحديث قائمة المتطلبات', step: 'STEP 06' },
+    { title: 'الإطلاق (Release)', desc: 'نشر نسخة عمل من المنتج في بيئة الإنتاج، مع ضمان استمرارية الخدمة وإبلاغ الفريق والعملاء بكل إصدار', step: 'STEP 07' },
+    { title: 'التحسين المستمر (Retrospective)', desc: 'يجتمع الفريق لمراجعة أسلوب العمل وتحديد نقاط القوة والضعف، ووضع إجراءات تحسين للـ Sprint القادم', step: 'STEP 08' }
+  ];
+
+  var angle = 0;
+  var speed = 0.12;
+  var paused = false;
+  var activeIndex = -1;
+  var radius = 0;
+  var raf;
+
+  // Generate directional arrow markers on the SVG track
+  function generateArrows() {
+    var R = 35, CX = 50, CY = 50;
+    for (var i = 0; i < 8; i++) {
+      var theta = (i * 45 + 22.5) * Math.PI / 180;
+      var mx = CX + R * Math.sin(theta);
+      var my = CY - R * Math.cos(theta);
+      var tx = Math.cos(theta), ty = Math.sin(theta);
+      var px = -Math.sin(theta), py = Math.cos(theta);
+      var sf = 1.4, sb = 0.7, ss = 0.6;
+      var tipX = mx + tx * sf, tipY = my + ty * sf;
+      var blX = mx - tx * sb + px * ss, blY = my - ty * sb + py * ss;
+      var brX = mx - tx * sb - px * ss, brY = my - ty * sb - py * ss;
+      var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      poly.setAttribute('points', tipX.toFixed(2) + ',' + tipY.toFixed(2) + ' ' + blX.toFixed(2) + ',' + blY.toFixed(2) + ' ' + brX.toFixed(2) + ',' + brY.toFixed(2));
+      poly.setAttribute('class', 'cycle-arrow-marker');
+      poly.setAttribute('data-arrow', i);
+      trackSvg.appendChild(poly);
+      arrowEls.push(poly);
+    }
+  }
+
+  // Calculate radius and position nodes
+  function layout() {
+    var w = viewport.offsetWidth;
+    radius = w * 0.37;
+    nodeEls.forEach(function (node, i) {
+      var base = i * 45;
+      node.style.transform = 'rotate(' + base + 'deg) translateY(' + (-radius) + 'px) rotate(' + (-base) + 'deg)';
+    });
+  }
+
+  // Animation loop
+  function tick() {
+    if (!paused) {
+      angle = (angle + speed) % 360;
+    }
+    ring.style.transform = 'rotate(' + angle + 'deg)';
+    innerWraps.forEach(function (wrap) {
+      wrap.style.transform = 'rotate(' + (-angle) + 'deg)';
+    });
+    raf = requestAnimationFrame(tick);
+  }
+
+  // Activate a node (hover/tap)
+  function activateNode(i) {
+    if (activeIndex === i) return;
+    paused = true;
+    activeIndex = i;
+    ring.classList.add('is-paused');
+    centerEl.classList.add('active');
+    detailStep.textContent = stepsData[i].step;
+    detailTitle.textContent = stepsData[i].title;
+    detailDesc.textContent = stepsData[i].desc;
+    detailIcon.innerHTML = nodeEls[i].querySelector('.cycle-node-icon').innerHTML;
+    // Highlight adjacent arcs and arrows
+    var prev = (i - 1 + 8) % 8;
+    arcEls.forEach(function (arc, j) {
+      arc.classList.toggle('arc-active', j === i || j === prev);
+    });
+    arrowEls.forEach(function (arrow, j) {
+      arrow.classList.toggle('arrow-active', j === i || j === prev);
+    });
+    nodeEls.forEach(function (n, j) { n.classList.toggle('is-active', j === i); });
+  }
+
+  // Deactivate
+  function deactivateNode() {
+    paused = false;
+    activeIndex = -1;
+    ring.classList.remove('is-paused');
+    centerEl.classList.remove('active');
+    arcEls.forEach(function (arc) { arc.classList.remove('arc-active'); });
+    arrowEls.forEach(function (arrow) { arrow.classList.remove('arrow-active'); });
+    nodeEls.forEach(function (n) { n.classList.remove('is-active'); });
+  }
+
+  // Event listeners
+  nodeEls.forEach(function (node, i) {
+    node.addEventListener('mouseenter', function () { activateNode(i); });
+    node.addEventListener('mouseleave', function () { deactivateNode(); });
+    node.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (activeIndex === i) { deactivateNode(); } else { activateNode(i); }
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (activeIndex >= 0 && !e.target.closest('.cycle-node')) { deactivateNode(); }
+  });
+
+  // Responsive resize
+  var resizeTimer;
+  function onResize() { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 60); }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(onResize).observe(viewport);
+  } else {
+    window.addEventListener('resize', onResize);
+  }
+
+  // Init
+  generateArrows();
+  layout();
+  tick();
 })();
 </script>
 
