@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <style>
     /* ═══════════════════════════════════════════
@@ -59,6 +60,7 @@
     h1, h2, h3, .font-ar-bold { font-weight: 700; }
     h1  { font-size: 68px; line-height: 1.15; }
     h2  { font-size: 36px; line-height: 1.3; }
+    #learn-heading, #curriculum .section-title-wrap h2, .pricing-section h2.text-center { font-size: clamp(40px, 5vw, 58px); }
     h3  { font-size: 22px; line-height: 1.4; }
     .font-en { font-family: var(--font-en); }
     .text-secondary { color: var(--text-secondary); }
@@ -97,7 +99,6 @@
     #hero-web3 {
       position: relative;
       width: 100%;
-      min-height: 100vh;
       background: #000;
       overflow: hidden;
     }
@@ -119,9 +120,9 @@
     .hero-price-orig .strike { text-decoration: line-through; font-family: var(--font-en); }
 
     .video-bg {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; z-index: 0;
+      position: relative;
+      width: 100%; height: auto;
+      display: block; z-index: 0;
     }
 
     /* ── Navbar pill button (hero) ── */
@@ -204,30 +205,33 @@
     /* ═══════════════════════════════════════════
        TADARAB VIDEO SECTION
     ════════════════════════════════════════════ */
-    .video-section { padding: 0; position: relative; }
+    .video-section { padding: 0px 80px 40px; position: relative; }
     .video-section-inner {
-      position: relative; width: 100%; aspect-ratio: 21/9; overflow: hidden; cursor: pointer;
+      position: relative; width: 100%; overflow: hidden; cursor: pointer;
+      border-radius: 16px;
     }
     .video-section-inner video {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); width: 100%; height: 100%; object-fit: cover; display: block;
+      width: 100%; height: auto; display: block;
     }
-    .video-section-inner::before, .video-section-inner::after {
-      content: ''; position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; width: 22%;
-    }
-    .video-section-inner::before { left:  0; background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.75) 40%, transparent 100%); }
-    .video-section-inner::after  { right: 0; background: linear-gradient(to left,  #000 0%, rgba(0,0,0,0.75) 40%, transparent 100%); }
+    .video-section-inner::before, .video-section-inner::after { display: none; }
 
-    /* ── Curtain fan overlay ── */
+    /* ── Curtain fan overlay — bottom ── */
     .video-curtain-divider {
       position: absolute; bottom: 0; left: 0; right: 0;
-      height: 65%; z-index: 4; pointer-events: none; line-height: 0;
+      height: 50%; z-index: 4; pointer-events: none; line-height: 0;
     }
     .video-curtain-divider svg { width: 100%; height: 100%; display: block; }
 
+    /* ── Curtain fan overlay — top ── */
+    .video-curtain-top {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 50%; z-index: 4; pointer-events: none; line-height: 0;
+    }
+    .video-curtain-top svg { width: 100%; height: 100%; display: block; }
+
     .video-section-overlay {
       position: absolute; inset: 0; z-index: 3; background: transparent;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding-bottom: 120px;
       transition: opacity 0.4s ease;
     }
     .video-section-title { font-size: 38px; font-weight: 700; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
@@ -236,20 +240,18 @@
     /* Play btn */
     .play-btn {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 80px; height: 80px; border-radius: 50%;
-      background: rgba(190,22,34,0.9); backdrop-filter: blur(8px);
+      width: 88px; height: 88px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; border: none; z-index: 4;
-      transition: transform 0.3s, background 0.3s;
-      animation: pulsePlay 2s infinite; padding: 0;
-      box-shadow: 0 0 0 10px rgba(190,22,34,0.12);
+      cursor: pointer; border: 1.5px solid rgba(255,255,255,0.35); z-index: 4;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      animation: pulsePlay 3s ease-in-out infinite; padding: 0;
     }
-    .play-btn:hover { transform: translate(-50%,-50%) scale(1.1); animation: none; }
-    .play-btn svg   { width: 32px; height: 32px; fill: #FFF; margin-left: 3px; }
+    .play-btn:hover { transform: translate(-50%,-50%) scale(1.08); animation: none; background: rgba(255,255,255,0.15); box-shadow: 0 0 30px rgba(255,255,255,0.12); }
+    .play-btn svg   { width: 30px; height: 30px; fill: #FFF; margin-left: 4px; }
     @keyframes pulsePlay {
-      0%   { box-shadow: 0 0 0 0 rgba(190,22,34,0.7); }
-      70%  { box-shadow: 0 0 0 20px rgba(190,22,34,0); }
-      100% { box-shadow: 0 0 0 0 rgba(190,22,34,0); }
+      0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.0), 0 0 0 8px rgba(255,255,255,0.06); }
+      50%     { box-shadow: 0 0 0 0 rgba(255,255,255,0.0), 0 0 0 18px rgba(255,255,255,0.03); }
     }
     @keyframes playRipple {
       0%   { transform: scale(1);   opacity: 0.65; }
@@ -499,7 +501,6 @@
       .price-features li svg { transform: scale(0); transition: transform 400ms cubic-bezier(0.34,1.56,0.64,1); }
       .price-features li.check-active svg { transform: scale(1); }
       .play-btn { overflow: visible; }
-      .play-btn::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(190,22,34,0.55); animation: playRipple 2s ease-out infinite; pointer-events: none; }
       .faq-a { transition: max-height 300ms cubic-bezier(0.16,1,0.3,1), padding 300ms cubic-bezier(0.16,1,0.3,1) !important; }
     }
 
@@ -510,7 +511,7 @@
       .responsive-nav { padding: 20px 24px !important; }
       .nav-links-wrapper { display: none !important; }
       .hero-content-web3 { padding-top: 200px !important; }
-      .hero-heading-web3 { font-size: 36px !important; }
+      .hero-heading-web3 { font-size: 36px !important; white-space: normal !important; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .stat-item:nth-child(2)::after { display: none; }
       .stat-item:nth-child(n+3) { margin-top: 30px; }
@@ -689,7 +690,7 @@
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1;"></div>
 
   <!-- Content layer -->
-  <div style="position:relative;z-index:2;display:flex;flex-direction:column;min-height:100vh;">
+  <div style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;min-height:100%;">
 
     <!-- NAVBAR -->
     <nav class="responsive-nav" style="display:flex;align-items:center;justify-content:space-between;padding:20px 120px;flex-shrink:0;">
@@ -710,13 +711,13 @@
       </div>
 
       <!-- Left side (RTL end): CTA pill button -->
-      <button class="nav-btn" type="button">
+      <a class="nav-btn" href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9#course-rating" target="_blank" style="text-decoration:none;">
         <span class="nav-btn-inner" style="font-family:var(--font-ar);">التسجيل في الدورة</span>
-      </button>
+      </a>
     </nav>
 
     <!-- HERO CONTENT -->
-    <div class="hero-content-web3" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:200px;padding-bottom:102px;padding-left:24px;padding-right:24px;gap:32px;">
+    <div class="hero-content-web3" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:clamp(100px,15vh,200px);padding-bottom:40px;padding-left:24px;padding-right:24px;gap:24px;">
 
       <!-- Badge / Subtitle -->
       <div class="hero-badge-web3">
@@ -725,7 +726,7 @@
       </div>
 
       <!-- Heading with typewriter -->
-      <h1 class="hero-heading-web3" style="font-size:clamp(36px,5.8vw,72px);font-weight:700;line-height:1.2;max-width:800px;font-family:var(--font-ar);">
+      <h1 class="hero-heading-web3" style="font-size:clamp(36px,5.8vw,72px);font-weight:700;line-height:1.2;max-width:1100px;white-space:nowrap;font-family:var(--font-ar);">
         تعلّم كيف <span class="typed-highlight"><span id="typedWord"></span><span class="typed-cursor">|</span></span> مشاريعك
       </h1>
 
@@ -738,10 +739,10 @@
       <div class="hero-price-block">
         <div class="hero-price-main">
           <span class="hero-price-num">24</span>
-          <span class="hero-price-cur">ك.د</span>
+          <span class="hero-price-cur">د.ك</span>
         </div>
         <div class="hero-price-orig">
-          <span class="strike">59 ك.د</span>
+          <span class="strike">59 د.ك</span>
           <span>خصم 59%</span>
         </div>
       </div>
@@ -764,25 +765,34 @@
   <!-- Video Section -->
   <div class="video-section">
     <div class="video-section-inner" onclick="openVideoModal()">
-      <video id="heroVideo" loop playsinline muted style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
-        <source src="../tadarab-landing-page/tadarab-landing-page.mp4" type="video/mp4">
+      <video id="heroVideo" loop playsinline muted style="width:100%;height:auto;display:block;">
+        <source src="tadarab-landing-page.mp4" type="video/mp4">
       </video>
-      <!-- Fan curtain overlay: all triangles converge at center-bottom point -->
+      <!-- Fan curtain overlay — TOP -->
+      <div class="video-curtain-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <!-- LEFT side — tip at x=950 on the top edge (y=0), fans downward -->
+          <!-- LEFT — tip far right at x=1100 -->
+          <path d="M0,240 L0,0 L1100,0 Z" fill="#000" opacity="0.15"/>
+          <path d="M0,140 L0,0 L1100,0 Z" fill="#000" opacity="0.35"/>
+          <path d="M0,55  L0,0 L1100,0 Z" fill="#000" opacity="0.65"/>
+          <!-- RIGHT — tip at x=700, intersection zone skews right -->
+          <path d="M1440,240 L1440,0 L700,0 Z" fill="#000" opacity="0.15"/>
+          <path d="M1440,140 L1440,0 L700,0 Z" fill="#000" opacity="0.35"/>
+          <path d="M1440,55  L1440,0 L700,0 Z" fill="#000" opacity="0.65"/>
+        </svg>
+      </div>
+      <!-- Fan curtain overlay — BOTTOM: all triangles converge at center-bottom point -->
       <div class="video-curtain-divider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <!-- Each triangle: M0,[top] L0,400 L720,400 Z  -->
-          <!-- All share the same bottom-center tip at (720,400)  -->
-          <!-- Lightest — reaches the top of the overlay -->
-          <path d="M0,0   L0,400 L720,400 Z" fill="#000" opacity="0.05"/>
-          <path d="M0,55  L0,400 L720,400 Z" fill="#000" opacity="0.07"/>
-          <path d="M0,120 L0,400 L720,400 Z" fill="#000" opacity="0.10"/>
-          <path d="M0,190 L0,400 L720,400 Z" fill="#000" opacity="0.14"/>
-          <path d="M0,248 L0,400 L720,400 Z" fill="#000" opacity="0.20"/>
-          <path d="M0,300 L0,400 L720,400 Z" fill="#000" opacity="0.28"/>
-          <path d="M0,342 L0,400 L720,400 Z" fill="#000" opacity="0.40"/>
-          <path d="M0,372 L0,400 L720,400 Z" fill="#000" opacity="0.55"/>
-          <!-- Darkest — smallest sliver, hugs the bottom -->
-          <path d="M0,392 L0,400 L720,400 Z" fill="#000" opacity="0.72"/>
+          <!-- LEFT — tip at x=740, intersection zone skews left -->
+          <path d="M0,160 L0,400 L740,400 Z" fill="#000" opacity="0.15"/>
+          <path d="M0,260 L0,400 L740,400 Z" fill="#000" opacity="0.35"/>
+          <path d="M0,345 L0,400 L740,400 Z" fill="#000" opacity="0.65"/>
+          <!-- RIGHT — tip far left at x=300 -->
+          <path d="M1440,160 L1440,400 L300,400 Z" fill="#000" opacity="0.15"/>
+          <path d="M1440,260 L1440,400 L300,400 Z" fill="#000" opacity="0.35"/>
+          <path d="M1440,345 L1440,400 L300,400 Z" fill="#000" opacity="0.65"/>
         </svg>
       </div>
       <div class="video-section-overlay" id="videoOverlay">
@@ -1001,10 +1011,10 @@
             <div class="price-title" style="margin-bottom:12px;">سعر الدورة</div>
             <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
               <span style="font-size:52px;font-weight:900;color:#fff;font-family:var(--font-en);line-height:1;">24</span>
-              <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">ك.د</span>
+              <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">د.ك</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px;">
-              <span style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">59 ك.د</span>
+              <span style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">59 د.ك</span>
               <span style="color:var(--text-secondary);font-size:14px;">(خصم 59%)</span>
             </div>
           </div>
@@ -1077,30 +1087,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="vmodal-player">
-      <video id="modalVideo" playsinline style="width:100%;display:block;">
-        <source src="../tadarab-landing-page/tadarab-landing-page.mp4" type="video/mp4">
+      <video id="modalVideo" playsinline controls>
+        <source src="tadarab-landing-page.mp4" type="video/mp4">
       </video>
-      <div class="vmodal-controls">
-        <button class="vm-btn" onclick="vmTogglePlay()">
-          <svg id="vmPlayIcon"  viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
-          <svg id="vmPauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-        </button>
-        <span class="vm-time" id="vmCurrent">0:00</span>
-        <div class="vm-seek-wrap"><input type="range" id="vmSeek" class="vm-seek" min="0" max="100" value="0" step="0.1"></div>
-        <span class="vm-time" id="vmDuration">0:00</span>
-        <div class="vm-vol-wrap">
-          <button class="vm-btn" onclick="vmToggleMute()">
-            <svg id="vmVolIcon"  viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-            <svg id="vmMuteIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
-          </button>
-          <input type="range" id="vmVol" class="vm-vol" min="0" max="1" value="1" step="0.05">
-        </div>
-        <select id="vmSpeed" class="vm-speed" onchange="vmSetSpeed(this.value)">
-          <option value="0.5">0.5×</option><option value="0.75">0.75×</option>
-          <option value="1" selected>1×</option><option value="1.25">1.25×</option>
-          <option value="1.5">1.5×</option><option value="2">2×</option>
-        </select>
-      </div>
     </div>
   </div>
 </div>
@@ -1264,7 +1253,7 @@
 
   // Typewriter for hero H1
   function initTypewriter() {
-    var words = ['تُخطّط', 'تُنفّذ', 'تتحكّم بـ', 'تُتقن', 'تقود'];
+    var words = ['تُخطّط', 'تُنفّذ', 'تقود'];
     var el = document.getElementById('typedWord');
     if (!el) return;
     var wi = 0, ci = 0, deleting = false;
@@ -1296,59 +1285,41 @@
 })();
 </script>
 
+<!-- Plyr Video Player -->
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 <!-- Video Modal Logic -->
 <script>
 (function () {
-  var modal, modalVideo, vmSeek, vmCurrent, vmDuration, vmPlayIcon, vmPauseIcon, vmVolIcon, vmMuteIcon, vmVol;
-  var inited = false;
-  function $(id) { return document.getElementById(id); }
-  function vmInit() {
-    if (inited) return; inited = true;
-    modal = $('videoModal'); modalVideo = $('modalVideo'); vmSeek = $('vmSeek');
-    vmCurrent = $('vmCurrent'); vmDuration = $('vmDuration');
-    vmPlayIcon = $('vmPlayIcon'); vmPauseIcon = $('vmPauseIcon');
-    vmVolIcon = $('vmVolIcon'); vmMuteIcon = $('vmMuteIcon'); vmVol = $('vmVol');
-    modalVideo.addEventListener('loadedmetadata', function () { vmDuration.textContent = vmFmt(modalVideo.duration); vmSeek.max = modalVideo.duration; });
-    modalVideo.addEventListener('timeupdate', vmTick);
-    modalVideo.addEventListener('ended', function () { vmPlayIcon.style.display = ''; vmPauseIcon.style.display = 'none'; });
-    vmSeek.addEventListener('input', function () { modalVideo.currentTime = vmSeek.value; });
-    vmVol.addEventListener('input', function () { modalVideo.volume = vmVol.value; modalVideo.muted = +vmVol.value === 0; vmUpdateVol(); });
+  var modal = document.getElementById('videoModal');
+  var plyrPlayer = null;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    plyrPlayer = new Plyr('#modalVideo', {
+      controls: ['play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'fullscreen'],
+      settings: ['speed'],
+      speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 2] },
+      invertTime: false,
+      resetOnEnd: false
+    });
     document.addEventListener('keydown', function (e) {
       if (!modal || !modal.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeVideoModal();
-      if (e.key === ' ' || e.code === 'Space') { e.preventDefault(); vmTogglePlay(); }
-      if (e.key === 'ArrowRight') modalVideo.currentTime = Math.min(modalVideo.currentTime + 5, modalVideo.duration);
-      if (e.key === 'ArrowLeft')  modalVideo.currentTime = Math.max(modalVideo.currentTime - 5, 0);
     });
-  }
-  function vmTick() {
-    if (!modalVideo) return;
-    var cur = modalVideo.currentTime, dur = modalVideo.duration || 1;
-    vmSeek.value = cur; vmCurrent.textContent = vmFmt(cur);
-    vmSeek.style.background = 'linear-gradient(to right,#BE1622 ' + (cur / dur * 100).toFixed(2) + '%,rgba(255,255,255,0.15) ' + (cur / dur * 100).toFixed(2) + '%)';
-  }
-  function vmFmt(s) { if (!s || isNaN(s)) return '0:00'; var m = Math.floor(s/60), sec = Math.floor(s%60); return m + ':' + (sec < 10 ? '0' : '') + sec; }
-  function vmUpdateVol() { var muted = modalVideo.muted || +modalVideo.volume === 0; vmVolIcon.style.display = muted ? 'none' : ''; vmMuteIcon.style.display = muted ? '' : 'none'; }
+  });
+
   window.openVideoModal = function () {
-    vmInit(); modal.style.display = 'flex';
+    modal.style.display = 'flex';
     requestAnimationFrame(function () { modal.classList.add('is-open'); });
     document.body.style.overflow = 'hidden';
-    modalVideo.currentTime = 0; modalVideo.muted = false; modalVideo.volume = 1; vmVol.value = 1;
-    vmUpdateVol(); modalVideo.play().catch(function(){});
-    vmPlayIcon.style.display = 'none'; vmPauseIcon.style.display = '';
+    if (plyrPlayer) { plyrPlayer.currentTime = 0; plyrPlayer.play(); }
   };
+
   window.closeVideoModal = function () {
     modal.classList.remove('is-open');
     setTimeout(function () { modal.style.display = 'none'; }, 300);
-    document.body.style.overflow = ''; modalVideo.pause();
-    vmPlayIcon.style.display = ''; vmPauseIcon.style.display = 'none';
+    document.body.style.overflow = '';
+    if (plyrPlayer) plyrPlayer.pause();
   };
-  window.vmTogglePlay = function () {
-    if (modalVideo.paused) { modalVideo.play(); vmPlayIcon.style.display = 'none'; vmPauseIcon.style.display = ''; }
-    else { modalVideo.pause(); vmPlayIcon.style.display = ''; vmPauseIcon.style.display = 'none'; }
-  };
-  window.vmToggleMute = function () { modalVideo.muted = !modalVideo.muted; vmUpdateVol(); };
-  window.vmSetSpeed = function (v) { if (modalVideo) modalVideo.playbackRate = parseFloat(v); };
 })();
 </script>
 
