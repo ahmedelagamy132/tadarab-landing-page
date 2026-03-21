@@ -832,15 +832,15 @@
     /* Nodes */
     .cycle-node {
       position: absolute; left: 50%; top: 50%;
-      width: 114px; margin-left: -57px; margin-top: -44px;
+      width: 148px; margin-left: -74px; margin-top: -56px;
       z-index: 3; cursor: pointer;
     }
     .cycle-node-inner-wrap { will-change: transform; }
     .cycle-node-card {
       background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 6px; padding: 14px 8px; position: relative;
+      gap: 8px; padding: 18px 12px; position: relative;
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background 0.35s ease,
                   border-color 0.35s ease, box-shadow 0.35s ease;
     }
@@ -874,22 +874,22 @@
       50% { border-color: rgba(255,255,255,0.04); transform: scale(1.05); }
     }
     .cycle-node-icon {
-      width: 26px; height: 26px; color: rgba(255,255,255,0.55); transition: color 0.3s ease;
+      width: 34px; height: 34px; color: rgba(255,255,255,0.55); transition: color 0.3s ease;
     }
     .cycle-node-icon svg { width: 100%; height: 100%; }
     .cycle-node:hover .cycle-node-icon,
     .cycle-node.is-active .cycle-node-icon { color: #fff; }
     .cycle-node-label {
-      font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,0.7);
+      font-size: 13.5px; font-weight: 700; color: rgba(255,255,255,0.7);
       text-align: center; line-height: 1.5; transition: color 0.3s ease;
     }
     .cycle-node:hover .cycle-node-label,
     .cycle-node.is-active .cycle-node-label { color: #fff; }
     .cycle-node-num {
-      position: absolute; top: -7px; right: -7px; width: 20px; height: 20px; border-radius: 50%;
+      position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%;
       background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
       display: flex; align-items: center; justify-content: center;
-      font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.45);
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.45);
       font-family: var(--font-en); z-index: 4; transition: all 0.3s ease;
     }
     .cycle-node:hover .cycle-node-num,
@@ -908,11 +908,11 @@
     }
     @media (max-width: 650px) {
       .cycle-viewport { max-width: 360px; margin-top: 40px; }
-      .cycle-node { width: 84px; margin-left: -42px; margin-top: -36px; }
-      .cycle-node-card { padding: 10px 6px; gap: 4px; border-radius: 12px; }
-      .cycle-node-icon { width: 20px; height: 20px; }
-      .cycle-node-label { font-size: 9.5px; }
-      .cycle-node-num { width: 16px; height: 16px; font-size: 8px; top: -5px; right: -5px; }
+      .cycle-node { width: 96px; margin-left: -48px; margin-top: -40px; }
+      .cycle-node-card { padding: 12px 8px; gap: 5px; border-radius: 14px; }
+      .cycle-node-icon { width: 24px; height: 24px; }
+      .cycle-node-label { font-size: 10.5px; }
+      .cycle-node-num { width: 18px; height: 18px; font-size: 8px; top: -6px; right: -6px; }
       .cycle-center { width: 110px; }
       .cycle-center-label { font-size: 20px; }
       .cycle-center-sub { font-size: 11px; }
