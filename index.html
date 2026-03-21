@@ -221,8 +221,8 @@
 
     /* ── Curtain fan overlay — bottom ── */
     .video-curtain-divider {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 50%; z-index: 4; pointer-events: none; line-height: 0;
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: calc(50% + 6px); z-index: 4; pointer-events: none; line-height: 0;
     }
     .video-curtain-divider svg { width: 100%; height: 100%; display: block; }
 
@@ -775,15 +775,16 @@
       <!-- Fan curtain overlay — TOP -->
       <div class="video-curtain-top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <!-- LEFT side — tip at x=950 on the top edge (y=0), fans downward -->
           <!-- LEFT — tip far right at x=1100 -->
           <path d="M0,240 L0,0 L1100,0 Z" fill="#000" opacity="0.15"/>
           <path d="M0,140 L0,0 L1100,0 Z" fill="#000" opacity="0.35"/>
           <path d="M0,55  L0,0 L1100,0 Z" fill="#000" opacity="0.65"/>
+          <path d="M0,18  L0,0 L1100,0 Z" fill="#000" opacity="0.88"/>
           <!-- RIGHT — tip at x=700, intersection zone skews right -->
           <path d="M1440,240 L1440,0 L700,0 Z" fill="#000" opacity="0.15"/>
           <path d="M1440,140 L1440,0 L700,0 Z" fill="#000" opacity="0.35"/>
           <path d="M1440,55  L1440,0 L700,0 Z" fill="#000" opacity="0.65"/>
+          <path d="M1440,18  L1440,0 L700,0 Z" fill="#000" opacity="0.88"/>
         </svg>
       </div>
       <!-- Fan curtain overlay — BOTTOM: all triangles converge at center-bottom point -->
@@ -793,10 +794,14 @@
           <path d="M0,160 L0,400 L740,400 Z" fill="#000" opacity="0.15"/>
           <path d="M0,260 L0,400 L740,400 Z" fill="#000" opacity="0.35"/>
           <path d="M0,345 L0,400 L740,400 Z" fill="#000" opacity="0.65"/>
+          <path d="M0,385 L0,400 L740,400 Z" fill="#000" opacity="0.88"/>
           <!-- RIGHT — tip far left at x=300 -->
           <path d="M1440,160 L1440,400 L300,400 Z" fill="#000" opacity="0.15"/>
           <path d="M1440,260 L1440,400 L300,400 Z" fill="#000" opacity="0.35"/>
           <path d="M1440,345 L1440,400 L300,400 Z" fill="#000" opacity="0.65"/>
+          <path d="M1440,385 L1440,400 L300,400 Z" fill="#000" opacity="0.88"/>
+          <!-- Full-width solid seal at the very bottom edge -->
+          <rect x="0" y="370" width="1440" height="30" fill="#000"/>
         </svg>
       </div>
       <div class="video-section-overlay" id="videoOverlay">
