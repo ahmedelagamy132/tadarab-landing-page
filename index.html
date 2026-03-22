@@ -312,33 +312,33 @@
       color: rgba(255,255,255,0.72); font-size: 16px;
       line-height: 1.95; margin-bottom: 18px;
     }
+    .course-details-content .section-title-wrap h2 { font-size: clamp(42px, 5vw, 58px); }
     .course-details-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; margin-top: 56px;
-      max-width: 860px; margin-left: auto; margin-right: auto;
-      position: relative;
+      gap: 20px; margin-top: 52px;
+      max-width: 900px; margin-left: auto; margin-right: auto;
     }
-    .course-details-grid::before {
+    .course-details-card {
+      border-radius: 16px; padding: 30px 28px;
+      background: linear-gradient(145deg, rgba(13,17,23,0.92) 0%, rgba(0,4,13,0.88) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.5);
+      position: relative; overflow: hidden;
+    }
+    .course-details-card::before {
       content: ''; position: absolute;
-      top: 0; bottom: 0; left: 50%;
-      width: 1px; background: rgba(255,255,255,0.12);
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
     }
-    .course-details-card { padding: 0 36px; }
     .course-details-card h3 {
-      font-size: 16px; font-weight: 800; color: #fff;
-      margin-bottom: 24px; padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .course-details-card h3::before {
-      content: ''; display: block; flex-shrink: 0;
-      width: 24px; height: 3px; border-radius: 2px;
-      background: var(--accent-primary);
+      font-size: 17px; font-weight: 800;
+      color: var(--accent-primary); margin-bottom: 22px;
+      padding-bottom: 14px; border-bottom: 1px solid rgba(212,168,67,0.15);
     }
     .course-details-card ol,
-    .course-details-card ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .course-details-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .course-details-card ol li {
-      display: flex; align-items: flex-start; gap: 14px;
+      display: flex; align-items: flex-start; gap: 12px;
       color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.65;
     }
     .cd-num {
@@ -349,7 +349,7 @@
       font-family: var(--font-en); margin-top: 2px;
     }
     .course-details-card ul li {
-      display: flex; align-items: flex-start; gap: 12px;
+      display: flex; align-items: flex-start; gap: 10px;
       color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.65;
     }
     .course-details-card ul li::before {
@@ -357,9 +357,7 @@
       border-radius: 50%; background: var(--accent-primary); margin-top: 9px;
     }
     @media (max-width: 700px) {
-      .course-details-grid { grid-template-columns: 1fr; gap: 40px; }
-      .course-details-grid::before { display: none; }
-      .course-details-card { padding: 0; }
+      .course-details-grid { grid-template-columns: 1fr; }
       .course-details-narrative .cd-highlight { font-size: 17px; }
       .course-details-narrative p { font-size: 15px; }
     }
