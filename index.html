@@ -293,11 +293,11 @@
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover; z-index: 0;
-      filter: brightness(0.45) saturate(0.9);
+      filter: brightness(0.25) saturate(0.8);
     }
     .course-details-overlay {
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to bottom, rgba(0,4,13,0.75) 0%, rgba(0,4,13,0.40) 50%, rgba(0,4,13,0.80) 100%);
+      background: linear-gradient(to bottom, rgba(0,4,13,0.80) 0%, rgba(0,4,13,0.70) 50%, rgba(0,4,13,0.85) 100%);
     }
     .course-details-content { position: relative; z-index: 2; }
     .course-details-narrative {
@@ -307,10 +307,12 @@
     .course-details-narrative .cd-highlight {
       font-size: 20px; font-weight: 700; color: #fff; line-height: 1.75;
       margin-bottom: 24px; display: block;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.8);
     }
     .course-details-narrative p {
-      color: rgba(255,255,255,0.72); font-size: 16px;
+      color: rgba(255,255,255,0.90); font-size: 16px;
       line-height: 1.95; margin-bottom: 18px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     }
     .course-details-content .section-title-wrap h2 { font-size: clamp(42px, 5vw, 58px); }
     .course-details-grid {
@@ -717,7 +719,7 @@
     @media (max-width: 767px) {
       .responsive-nav { padding: 16px 20px !important; justify-content: center !important; }
       .nav-links-wrapper { display: none !important; }
-      .nav-btn { display: none !important; }
+      .nav-btn { width: 100% !important; }
       .inst2-photo-name { text-align: center !important; }
       .hero-content-web3 { padding-top: 140px !important; padding-left: 16px !important; padding-right: 16px !important; }
       .hero-content-web3 p { font-size: 15px !important; max-width: 100% !important; }
@@ -1333,7 +1335,7 @@
   </section>
 
   <!-- Course Details Section -->
-  <section class="section course-details-section" id="course-details">
+   <section class="section course-details-section" id="course-details">
     <video class="course-details-video-bg" autoplay loop muted playsinline>
       <source src="video-test.mp4" type="video/mp4">
     </video>
@@ -1770,11 +1772,11 @@
     <button class="vmodal-close" onclick="closeVideoModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div class="vmodal-player">
-      <video id="modalVideo" playsinline controls>
-        <source src="tadarab-landing-page.mp4" type="video/mp4">
-      </video>
-    </div>
+     <div class="vmodal-player">
+       <video id="modalVideo" playsinline controls>
+         <source src="assets/videos/tadarab-landing-page.mp4" type="video/mp4">
+       </video>
+     </div>
   </div>
 </div>
 

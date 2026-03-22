@@ -1,7 +1,0 @@
-#!/bin/bash
-# Commands to run on the server
-mkdir -p ~/.ssh
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC48/qi9iuf91spSyY27o+hDBbidpcBlx2iym2KRweioXUlETcEuzDXrpu10qqA0Ce76wgIltJSmoeTo6yw+LEAfWhd2PqWAjiTkJSvm/WfK6e+HsuvAw+pfs88HtMU6/6ky+oesqfdT19etOoqbRP/Zl8e2KNE5TGh3VobN7diHCIzefO462WppajyfqYCTXfkaV0pylJ2YL3hvQgMpBj1fDIqboC0HLTTvcP9xTR4rfrwzIsAE45tvvj+0LGgRcL/5giJRj/5Q/3UNOFRSZtpFOTcOdj4BFcAoJOG8YIDB6+kEu0yobp0/EqsGHacyzwpC4MycsOjYRJVeWPSlpshfFIxD5fkQ/8p99jrJuOqd8Hxqag68eb7fRTBzqTsuU1QblNjg6xv8gyjMe80tqdhog10C9DIWUpAkmSWhh0FiTlftPaao2Ft6us/XOs9NGtCwavj2kveTH+XkiawRPFacPiUXNfZwxtCQmWQHHuHCZfRiQgb4B/jerDo/w9IWVwQzYSLlfCyWxyncVpckafizFZISz7ppEm9yedX8dOYpkyxUMF6noDXy5VG33BoEanLWvTdpQwQQRsDIYz3DpJFw3DYncn8C85KzxKUWzwphDVY0Chm/BCXPClxGIkwFnALkwiA5PokgSd4DGeq4FVS/O53WOjx7URK0EBgA7ABmw== ahmed@Agamy" >> ~/.ssh/authorized_keys
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
-echo "SSH key added successfully"
