@@ -38,6 +38,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { overflow-x: hidden; }
 
+    /* ── Custom scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
+    * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.14) transparent; }
+
     body {
       background-color: #000;
       color: var(--text-primary);
@@ -108,8 +115,8 @@
     /* Typewriter */
     .typed-highlight { color: var(--accent-primary); white-space: nowrap; }
     .typed-cursor {
-      display: inline-block; font-weight: 700; color: var(--accent-primary);
-      -webkit-text-fill-color: var(--accent-primary);
+      display: inline-block; font-weight: 700; color: #fff;
+      -webkit-text-fill-color: #fff;
       animation: cursorBlink 0.65s step-end infinite; margin-right: 2px;
       font-size: 0.9em; vertical-align: middle;
     }
@@ -427,7 +434,7 @@
       transition: border-color 0.2s;
     }
     .inst2-stat:hover { border-color: rgba(255,255,255,0.14); }
-    .inst2-stat-num { font-size: 32px; font-weight: 900; color: var(--accent-primary); font-family: var(--font-en); line-height: 1; display: block; }
+    .inst2-stat-num { font-size: 32px; font-weight: 900; color: #fff; font-family: var(--font-en); line-height: 1; display: block; }
     .inst2-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.4); display: block; margin-top: 6px; }
     /* Bio */
     .inst2-bio { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.95; margin-bottom: 28px; }
@@ -743,11 +750,11 @@
       background-clip: text !important;
     }
 
-    /* ── Section title accent: gold ── */
-    .section-title-accent { background: var(--accent-primary) !important; opacity: 0.7; }
+    /* ── Section title accent: subtle white line ── */
+    .section-title-accent { background: rgba(255,255,255,0.25) !important; }
 
-    /* ── Stats numbers: gold ── */
-    .stat-num { color: var(--accent-primary) !important; }
+    /* ── Stats numbers: white ── */
+    .stat-num { color: #fff !important; }
     .stat-label-ar { color: rgba(255,255,255,0.5) !important; font-size: 16px !important; }
     .stat-item:not(:last-child)::after { background: rgba(255,255,255,0.08) !important; }
 
@@ -766,10 +773,10 @@
       border-color: rgba(255,255,255,0.14) !important;
       box-shadow: 0 20px 60px rgba(0,0,0,0.8) !important;
     }
-    .curr-chapter-label { color: var(--accent-primary) !important; opacity: 0.85; }
+    .curr-chapter-label { color: rgba(255,255,255,0.4) !important; }
     .curr-grid .learn-card-body h3 { color: #fff !important; font-size: 17px !important; }
     .curr-card-desc { color: rgba(255,255,255,0.45) !important; }
-    .curr-card-time { color: rgba(212,168,67,0.55) !important; }
+    .curr-card-time { color: rgba(255,255,255,0.3) !important; }
     .curr-summary   { color: rgba(255,255,255,0.4) !important; }
     .curr-summary strong { color: rgba(255,255,255,0.75) !important; }
 
@@ -777,7 +784,7 @@
     .cert-eyebrow { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.7) !important; }
     .cert-desc    { color: rgba(255,255,255,0.5) !important; }
     .cert-benefits li { color: rgba(255,255,255,0.75) !important; }
-    .cert-check { background: rgba(212,168,67,0.12) !important; border-color: rgba(212,168,67,0.35) !important; color: var(--accent-primary) !important; }
+    .cert-check { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.15) !important; color: rgba(255,255,255,0.8) !important; }
     .cert-glow { background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%) !important; }
     .cert-shadow-stack::before, .cert-shadow-stack::after { background: rgba(255,255,255,0.04) !important; }
 
@@ -792,10 +799,10 @@
       box-shadow: 0 0 80px rgba(255,255,255,0.02), 0 40px 80px rgba(0,0,0,0.8) !important;
       transform: none !important;
     }
-    .price-badge { background: rgba(212,168,67,0.15) !important; color: var(--accent-primary) !important; border: 1px solid rgba(212,168,67,0.3) !important; }
+    .price-badge { background: rgba(255,255,255,0.1) !important; color: rgba(255,255,255,0.8) !important; }
     .price-title { color: rgba(255,255,255,0.5) !important; font-size: 15px !important; font-weight: 500 !important; }
     .price-features li { color: rgba(255,255,255,0.5) !important; }
-    .price-features li svg { fill: var(--accent-primary) !important; }
+    .price-features li svg { fill: rgba(255,255,255,0.5) !important; }
 
     /* Pricing CTA → pill button style matching hero */
     .price-card .btn-tadarab-primary {
@@ -814,8 +821,8 @@
     .faq-item { background: rgba(255,255,255,0.02) !important; border-color: rgba(255,255,255,0.07) !important; }
     .faq-q { color: rgba(255,255,255,0.85) !important; font-size: 17px !important; }
     .faq-q:hover { color: #fff !important; }
-    .faq-toggle { color: rgba(212,168,67,0.6) !important; }
-    .faq-item.active .faq-toggle { color: var(--accent-primary) !important; }
+    .faq-toggle { color: rgba(255,255,255,0.4) !important; }
+    .faq-item.active .faq-toggle { color: #fff !important; }
     .faq-a { color: rgba(255,255,255,0.45) !important; }
 
     /* ── Final CTA ── */
@@ -946,9 +953,9 @@
     .cycle-node:hover .cycle-node-card,
     .cycle-node.is-active .cycle-node-card {
       transform: scale(1.13);
-      background: rgba(212,168,67,0.07);
-      border-color: rgba(212,168,67,0.35);
-      box-shadow: 0 0 30px rgba(212,168,67,0.12), 0 0 60px rgba(212,168,67,0.05);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 0 30px rgba(255,255,255,0.06), 0 0 60px rgba(255,255,255,0.03);
     }
     /* Glow ring */
     .cycle-node-card::before {
@@ -993,7 +1000,7 @@
     }
     .cycle-node:hover .cycle-node-num,
     .cycle-node.is-active .cycle-node-num {
-      background: rgba(212,168,67,0.2); border-color: rgba(212,168,67,0.5); color: var(--accent-primary);
+      background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;
     }
 
 
@@ -1096,9 +1103,16 @@
 
       <!-- Price block -->
       <div class="hero-price-block">
-        <div class="hero-price-main">
-          <span class="hero-price-num">24</span>
-          <span class="hero-price-cur">د.ك</span>
+        <div class="price-sparkle-wrap">
+          <span class="price-sparkle ps-1"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="#D4A843"/></svg></span>
+          <span class="price-sparkle ps-2"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="rgba(212,168,67,0.8)"/></svg></span>
+          <span class="price-sparkle ps-3"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="rgba(212,168,67,0.6)"/></svg></span>
+          <span class="price-sparkle ps-4"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="rgba(212,168,67,0.9)"/></svg></span>
+          <span class="price-sparkle ps-5"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="rgba(212,168,67,0.7)"/></svg></span>
+          <div class="hero-price-main">
+            <span class="hero-price-num">24</span>
+            <span class="hero-price-cur">د.ك</span>
+          </div>
         </div>
         <div class="hero-price-orig">
           <span class="strike">59 د.ك</span>
@@ -1487,10 +1501,6 @@
             <div class="inst2-photo-footer">
               <span class="inst2-photo-name">محمد بن عسكر</span>
               <span class="inst2-photo-role">مدرب وخبير في إدارة المشاريع</span>
-            </div>
-            <div class="inst2-exp-badge">
-              <span class="inst2-exp-num">18+</span>
-              <span class="inst2-exp-lbl">سنة خبرة</span>
             </div>
           </div>
         </div>
