@@ -13,7 +13,9 @@
       "Bash(git push:*)",
       "Bash(du -sh /var/www/html/assets/*)",
       "Bash(ls -lh /var/www/html/assets/*.webp)",
-      "Bash(ls -lh /var/www/html/*.mp4)"
+      "Bash(ls -lh /var/www/html/*.mp4)",
+      "Read(//etc/nginx/sites-enabled/**)",
+      "Read(//etc/apache2/**)"
     ]
   }
 }
