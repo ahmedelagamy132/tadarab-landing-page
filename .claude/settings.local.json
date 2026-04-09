@@ -7,7 +7,13 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
       "Bash(netstat -ano)",
       "Bash(findstr :3000)",
-      "Bash(findstr LISTENING)"
+      "Bash(findstr LISTENING)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(du -sh /var/www/html/assets/*)",
+      "Bash(ls -lh /var/www/html/assets/*.webp)",
+      "Bash(ls -lh /var/www/html/*.mp4)"
     ]
   }
 }

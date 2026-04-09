@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Miniver&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" media="print" onload="this.media='all'" />
 
   <style>
     /* ═══════════════════════════════════════════
@@ -1281,7 +1281,7 @@
       </div>
 
       <!-- Left side (RTL end): CTA pill button -->
-      <a class="nav-btn" href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9#course-rating" target="_blank" style="text-decoration:none;">
+      <a class="nav-btn" href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" target="_blank" style="text-decoration:none;">
         <span class="nav-btn-inner" style="font-family:var(--font-ar);">التسجيل في الدورة</span>
       </a>
     </nav>
@@ -1289,25 +1289,15 @@
     <!-- HERO CONTENT -->
     <div class="hero-content-web3" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:clamp(220px,30vh,360px);padding-bottom:40px;padding-left:24px;padding-right:24px;gap:24px;">
 
-      <!-- Heading with typewriter -->
-      <h1 class="hero-heading-web3" style="font-size:clamp(36px,5.8vw,72px);font-weight:700;line-height:1.2;max-width:1100px;white-space:nowrap;font-family:var(--font-ar);">
-        تعلّم كيف <span class="typed-highlight"><span id="typedWord"></span><span class="typed-cursor">|</span></span> مشاريعك
+      <!-- Heading -->
+      <h1 class="hero-heading-web3" style="font-size:clamp(28px,4.8vw,62px);font-weight:700;line-height:1.3;max-width:900px;font-family:var(--font-ar);">
+        أتقن أساسيات الأجايل ( Agile ) في ساعتين فقط
       </h1>
 
-      <!-- Benefit items -->
-      <div class="hero-benefits-row" style="display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:0 36px;margin-top:8px;margin-bottom:8px;">
-        <span style="display:inline-flex;align-items:baseline;gap:8px;font-size:22px;font-family:var(--font-ar);color:rgba(255,255,255,0.7);">
-          <span class="hero-benefit-num" style="font-family:var(--font-en);font-size:22px;color:rgba(212,168,67,0.75);letter-spacing:1px;">01</span>تخطيط أسرع
-        </span>
-        <span class="hero-benefit-sep" style="width:1px;height:20px;background:rgba(255,255,255,0.15);display:inline-block;align-self:center;flex-shrink:0;"></span>
-        <span style="display:inline-flex;align-items:baseline;gap:8px;font-size:22px;font-family:var(--font-ar);color:rgba(255,255,255,0.7);">
-          <span class="hero-benefit-num" style="font-family:var(--font-en);font-size:22px;color:rgba(212,168,67,0.75);letter-spacing:1px;">02</span>تنفيذ أذكى
-        </span>
-        <span class="hero-benefit-sep" style="width:1px;height:20px;background:rgba(255,255,255,0.15);display:inline-block;align-self:center;flex-shrink:0;"></span>
-        <span style="display:inline-flex;align-items:baseline;gap:8px;font-size:22px;font-family:var(--font-ar);color:rgba(255,255,255,0.7);">
-          <span class="hero-benefit-num" style="font-family:var(--font-en);font-size:22px;color:rgba(212,168,67,0.75);letter-spacing:1px;">03</span>تكيّف مع التغيير
-        </span>
-      </div>
+      <!-- Subtitle -->
+      <p style="font-size:clamp(15px,1.6vw,20px);font-family:var(--font-ar);color:rgba(255,255,255,0.75);max-width:700px;line-height:1.8;margin-top:4px;margin-bottom:4px;">
+        دورة عملية ومركزة تشرح لك الأجايل ببساطة، وتساعدك على تطبيقه مباشرة في مشاريعك — بدون تعقيد أو تنظير.
+      </p>
 
       <!-- Price block -->
       <div class="hero-price-block">
@@ -1318,20 +1308,21 @@
           <span class="price-sparkle ps-4"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="rgba(212,168,67,0.9)"/></svg></span>
           <span class="price-sparkle ps-5"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="rgba(212,168,67,0.65)"/></svg></span>
           <div class="hero-price-main">
-            <span class="hero-price-num">24</span>
-            <span class="hero-price-cur">د.ك</span>
+            <span class="hero-price-num">4184</span>
+            <span class="hero-price-cur">ج.م</span>
           </div>
         </div>
         <div class="hero-price-orig">
-          <span class="strike">59 د.ك</span>
-          <span>خصم 59%</span>
+          <span class="strike">9961 ج.م</span>
+          <span>خصم 58%</span>
         </div>
       </div>
 
       <!-- CTA -->
-      <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9#course-rating" class="hero-btn" target="_blank">
-        <span class="hero-btn-inner" style="font-family:var(--font-ar);font-size:16px;">التسجيل في الدورة</span>
+      <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" class="hero-btn" target="_blank">
+        <span class="hero-btn-inner" style="font-family:var(--font-ar);font-size:16px;">ابدأ رحلتك لعالم الأجايل (Agile) الآن</span>
       </a>
+      <p style="font-family:var(--font-ar);font-size:14px;color:rgba(255,255,255,0.6);margin-top:4px;">جرّب الدورة بثقة — ضمان استرداد كامل لمدة 30 يوماً</p>
 
     </div>
   </div>
@@ -1391,15 +1382,181 @@
     </div>
   </div>
 
-  <!-- Stats Bar -->
+  <!-- Course Highlights Bullets -->
   <div class="stats-bar">
-    <div class="container stats-grid">
-      <div class="stat-item"><div class="stat-num" data-val="9">0</div><div class="stat-label-ar">دروس</div></div>
-      <div class="stat-item"><div class="stat-num" data-val="2">0</div><div class="stat-label-ar">ساعة محتوى</div></div>
-      <div class="stat-item"><div class="stat-num" data-val="19">0</div><div class="stat-label-ar">سنة خبرة</div></div>
-      <div class="stat-item"><div class="stat-num" data-val="53">0</div><div class="stat-label-ar">% نسبة فشل المشاريع</div></div>
+    <div class="container" style="padding-top:32px;padding-bottom:32px;">
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 40px;direction:rtl;text-align:right;">
+        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ابدأ التطبيق من أول يوم</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> بدون تعقيد أو تنظير</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> أمثلة وحالات واقعية</li>
+      </ul>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION: WHY PROJECTS FAIL (Page 4)
+  ════════════════════════════════════════════════════════ -->
+  <section class="section" style="padding-top:90px;padding-bottom:90px;">
+    <div class="container" style="direction:rtl;">
+
+      <!-- Header -->
+      <div style="text-align:center;max-width:680px;margin:0 auto 64px;">
+        <h2 style="font-family:var(--font-ar);font-size:clamp(26px,3.4vw,48px);font-weight:700;color:#fff;line-height:1.45;margin-bottom:18px;">
+          لماذا تفشل المشاريع<br>رغم التخطيط الجيد؟
+        </h2>
+        <p style="font-family:var(--font-ar);font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,0.5);line-height:2;margin:0;">
+          تبدأ المشاريع بخطة واضحة... لكن مع أول تغيير في المتطلبات:
+        </p>
+      </div>
+
+      <!-- Two-column: numbered list + conclusion card -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
+
+        <!-- Numbered pain points -->
+        <div>
+          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+            <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.18);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">01</span>
+            <div>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">تتأخر المواعيد!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">الجداول الزمنية تنهار مع أول تعديل في المتطلبات</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+            <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.18);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">02</span>
+            <div>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">تتغير الأولويات!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">ما كان مهماً بالأمس يصبح ثانوياً اليوم بلا أسباب واضحة</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;">
+            <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.18);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">03</span>
+            <div>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">ويصبح التحكم في المشروع أصعب!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">تجد نفسك تطارد التغييرات بدلاً من قيادة المشروع</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conclusion card -->
+        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.07) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(212,168,67,0.18);border-radius:24px;padding:44px 36px;">
+          <div style="width:44px;height:3px;background:linear-gradient(90deg,#D4A843,rgba(212,168,67,0.2));border-radius:2px;margin-bottom:28px;"></div>
+          <p style="font-family:var(--font-ar);font-size:clamp(17px,1.7vw,21px);font-weight:700;color:#fff;line-height:1.7;margin:0 0 20px;">
+            المشكلة ليست فيك أو في طبيعة المشروع...
+          </p>
+          <p style="font-family:var(--font-ar);font-size:clamp(15px,1.4vw,17px);color:rgba(255,255,255,0.65);line-height:2;margin:0;">
+            المشكلة في <strong style="color:#D4A843;">الأسلوب التقليدي</strong> لإدارة المشاريع — الذي لم يُصمَّم أصلاً للتعامل مع التغيير.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION: THE SOLUTION — AGILE (Page 5)
+  ════════════════════════════════════════════════════════ -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;">
+    <div class="container" style="direction:rtl;">
+
+      <div style="text-align:center;margin-bottom:52px;">
+        <p style="font-family:var(--font-ar);font-size:13px;color:rgba(212,168,67,0.8);letter-spacing:2px;margin-bottom:16px;text-transform:uppercase;">الحل</p>
+        <h2 style="font-family:var(--font-ar);font-size:clamp(24px,3.2vw,46px);font-weight:700;color:#fff;line-height:1.4;margin-bottom:16px;">
+          الحل ليس في فقط في خطة أفضل...<br>
+          <span style="color:#D4A843;">بل في أسلوب أفضل</span>
+        </h2>
+        <p style="font-family:var(--font-ar);font-size:clamp(15px,1.4vw,18px);color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.9;">
+          الأجايل ليس مجرد منهجية... بل طريقة تفكير تساعدك على:
+        </p>
+      </div>
+
+      <!-- Three Agile benefit cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+
+        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">التكيف مع التغيير</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">بدلاً من مقاومة التغيير، تتعلم كيف تجعله في صالحك وتستفيد منه</p>
+        </div>
+
+        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">تسليم قيمة بشكل تدريجي ومستمر</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">تُسلّم نتائج حقيقية وملموسة في كل مرحلة دون انتظار نهاية المشروع</p>
+        </div>
+
+        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">إدارة المشروع بمرونة وثقة</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">تتحكم في مشروعك بثقة حتى عند مواجهة الغموض والتعقيد</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION: WHY YOU NEED THIS COURSE NOW (Page 6)
+  ════════════════════════════════════════════════════════ -->
+  <section class="section" style="padding-top:80px;padding-bottom:80px;background:#000;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(14,78,139,0.14) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="direction:rtl;position:relative;z-index:1;">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center;">
+
+        <!-- Statement side -->
+        <div style="text-align:right;">
+          <p style="font-family:var(--font-ar);font-size:13px;color:rgba(212,168,67,0.8);letter-spacing:2px;margin-bottom:20px;">لماذا تحتاج هذه الدورة الآن؟</p>
+          <h2 style="font-family:var(--font-ar);font-size:clamp(24px,3vw,42px);font-weight:700;color:#fff;line-height:1.5;margin-bottom:20px;">
+            في بيئة عمل تتغير بسرعة...<br>
+            <span style="color:#D4A843;">الطريقة التقليدية<br>لم تعد كافية.</span>
+          </h2>
+          <p style="font-family:var(--font-ar);font-size:clamp(14px,1.3vw,16px);color:rgba(255,255,255,0.6);line-height:2;margin:0;">
+            المشاريع اليوم لا تفشل بسبب ضعف التخطيط،<br>
+            بل بسبب عدم القدرة على التكيف مع التغيير.<br><br>
+            <strong style="color:rgba(255,255,255,0.8);">وهنا يأتي دور الـ Agile.</strong>
+          </p>
+        </div>
+
+        <!-- Benefits + highlight side -->
+        <div>
+          <p style="font-family:var(--font-ar);font-size:clamp(14px,1.3vw,16px);color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.9;">أسلوب عمل يساعدك على:</p>
+          <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:14px;">
+            <li style="display:flex;align-items:center;gap:14px;font-family:var(--font-ar);color:rgba(255,255,255,0.85);font-size:clamp(14px,1.3vw,16px);">
+              <span style="width:32px;height:32px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              التكيف مع التغيير بدل مقاومته
+            </li>
+            <li style="display:flex;align-items:center;gap:14px;font-family:var(--font-ar);color:rgba(255,255,255,0.85);font-size:clamp(14px,1.3vw,16px);">
+              <span style="width:32px;height:32px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              تسليم قيمة مستمرة
+            </li>
+            <li style="display:flex;align-items:center;gap:14px;font-family:var(--font-ar);color:rgba(255,255,255,0.85);font-size:clamp(14px,1.3vw,16px);">
+              <span style="width:32px;height:32px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              إدارة المشروع بمرونة
+            </li>
+          </ul>
+          <div style="background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:16px;padding:24px 28px;text-align:center;">
+            <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 8px;">وخلال ساعتين فقط</p>
+            <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.65);font-size:clamp(13px,1.2vw,15px);margin:0;line-height:1.8;">ستفهم هذا الأسلوب وتبدأ بتطبيقه مباشرة</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- What You'll Learn -->
   <section class="section">
@@ -1417,7 +1574,7 @@
 
           <div class="learn-card">
             <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668525.webp" alt="قيم ومبادئ الأجايل"></div>
-            <div class="learn-card-body"><h3>قيم ومبادئ الأجايل وأثرها في إدارة المشاريع</h3><p>تعرّف على المبادئ الـ 12 والقيم الأربع التي يقوم عليها الأجايل وكيف تُطبّق على أرض الواقع</p></div>
+            <div class="learn-card-body"><h3>قيم ومبادئ الأجايل وأثرها في إدارة المشاريع</h3><p>تعرّف على القيم الأربع التي يقوم عليها الأجايل وكيف تُطبَّق على أرض الواقع</p></div>
           </div>
 
           <div class="learn-card">
@@ -1432,7 +1589,7 @@
 
           <div class="learn-card">
             <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/7228778.webp" alt="أهم ممارسات الأجايل الشائعة"></div>
-            <div class="learn-card-body"><h3>أهم ممارسات الأجايل الشائعة في بيئات العمل الحديثة</h3><p>تعرّف على Scrum وKanban وSAFe وغيرها من الأطر العملية الأكثر استخداماً</p></div>
+            <div class="learn-card-body"><h3>أهم ممارسات الأجايل الشائعة في بيئات العمل الحديثة</h3><p>تعرّف على Scrum وKanban وغيرها من الأطر العملية الأكثر استخداماً</p></div>
           </div>
 
           <div class="learn-card">
@@ -1442,7 +1599,7 @@
 
           <div class="learn-card">
             <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668538.webp" alt="فهم آليات المتابعة المستمرة"></div>
-            <div class="learn-card-body"><h3>فهم آليات المتابعة المستمرة وتقييم التقدم داخل المشروع</h3><p>تعلّم كيف تقيس سرعة الفريق وتتابع التقدم عبر Burndown Charts والمقاييس الأجايل</p></div>
+            <div class="learn-card-body"><h3>فهم آليات المتابعة المستمرة وتقييم التقدم داخل المشروع</h3><p>تعلّم كيف تقيس سرعة الفريق وتتابع تقدم المشروع</p></div>
           </div>
 
           <div class="learn-card">
@@ -1470,9 +1627,10 @@
       </div>
 
       <div class="course-details-narrative">
-        <span class="cd-highlight">في عالم يتغيّر فيه كل شيء بسرعة… الطريقة التي تدير بها مشاريعك قد تكون سبب نجاحك… أو سبب فشلها دون أن تشعر.</span>
-        <p>كثير من المشاريع تبدأ بخطة واضحة، وتنتهي بتأخير وتعديلات لا تنتهي. المشكلة ليست في الفكرة ولا في الجهد، بل في أسلوب إدارة المشروع نفسه. عندما تتغيّر المتطلبات، تصبح الخطط الجامدة عبئًا — تضيع الأولويات، تتأخر المواعيد، وتجد نفسك تطارد التغييرات بدلًا من التحكم فيها.</p>
-        <p>لهذا تظهر الحاجة إلى إدارة المشاريع بمرونة — أسلوب يساعدك على التخطيط الذكي، التنفيذ السريع، والتكيّف المستمر، دون أن تفقد السيطرة أو جودة النتائج. ستفهم الفرق بين الإدارة التقليدية والإدارة المرنة، وتبني أساسًا واضحًا يساعدك على اختيار المنهج الأنسب لمشاريعك بثقة.</p>
+        <span class="cd-highlight">لماذا تفشل المشاريع رغم التخطيط الجيد؟</span>
+        <p>تبدأ المشاريع بخطة واضحة... لكن مع أول تغيير في المتطلبات: تتأخر المواعيد! تتغير الأولويات! ويصبح التحكم في المشروع أصعب! المشكلة ليست فيك أو في طبيعة المشروع... المشكلة في الأسلوب التقليدي لإدارة المشاريع.</p>
+        <p>الحل ليس في فقط في خطة أفضل... بل في أسلوب أفضل. الأجايل ليس مجرد منهجية، بل طريقة تفكير تساعدك على: التكيف مع التغيير، تسليم قيمة بشكل تدريجي ومستمر، وإدارة المشروع بمرونة وثقة.</p>
+        <p>في بيئة عمل تتغير بسرعة، الطريقة التقليدية لم تعد كافية. المشاريع اليوم لا تفشل بسبب ضعف التخطيط، بل بسبب عدم القدرة على التكيف مع التغيير. وهنا يأتي دور الـ Agile — وخلال ساعتين فقط ستفهم هذا الأسلوب وتبدأ بتطبيقه مباشرة.</p>
       </div>
 
       <div class="course-details-grid">
@@ -1486,11 +1644,12 @@
           </ol>
         </div>
         <div class="course-details-card">
-          <h3>الدورة موجهة إلى</h3>
+          <h3>لمن هذه الدورة؟</h3>
           <ul>
-            <li>مديري المشاريع والمشرفين.</li>
+            <li>مبتدئ في Agile وترغب بفهمه من الصفر.</li>
+            <li>مدير مشروع أو مشرف أو عضو في فريق.</li>
+            <li>تعمل في بيئة سريعة التغير.</li>
             <li>أصحاب المشاريع وروّاد الأعمال.</li>
-            <li>الموظفين في المجالات التقنية والرقمية والتسويقية.</li>
             <li>الراغبين في تطوير مسارهم المهني في إدارة المشاريع.</li>
           </ul>
         </div>
@@ -1499,8 +1658,8 @@
     </div>
   </section>
 
-  <!-- Curriculum -->
-  <section class="section" id="curriculum">
+  <!-- Curriculum removed per content update -->
+  <section class="section" id="curriculum" style="display:none;">
     <div class="container">
       <div class="section-title-wrap">
         <h2>محتوى الدورة</h2>
@@ -1788,7 +1947,7 @@
             <div class="inst2-cert"><span class="inst2-cert-code">PMI-ACP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف الممارسات المرنة</span><span class="inst2-tt-en">Agile Certified Practitioner</span></div></div>
             <div class="inst2-cert"><span class="inst2-cert-code">PMI-RMP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف إدارة المخاطر</span><span class="inst2-tt-en">Risk Management Professional</span></div></div>
             <div class="inst2-cert"><span class="inst2-cert-code">PMI-SP</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">محترف جدولة المشاريع</span><span class="inst2-tt-en">Scheduling Professional</span></div></div>
-            <div class="inst2-cert"><span class="inst2-cert-code">Senior Scrum Master</span><div class="inst2-cert-tooltip"><span class="inst2-tt-ar">Disciplined Agile</span></div></div>
+            <div class="inst2-cert" style="max-width:none;"><span class="inst2-cert-code" style="font-size:11px;letter-spacing:0.3px;">PMI Disciplined Agile Senior Scrum Master (DASSM)</span></div>
           </div>
 
           <!-- PMI Reviewer note -->
@@ -1809,7 +1968,7 @@
       <h2 class="text-center">احصل على الدورة <span class="arc-underline" id="cta-now-word">الآن<svg class="au-svg" viewBox="0 0 300 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cta-grad" x1="1" y1="0" x2="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#D4A843" stop-opacity="0"/><stop offset="10%" stop-color="#D4A843" stop-opacity="1"/><stop offset="90%" stop-color="#D4A843" stop-opacity="1"/><stop offset="100%" stop-color="#D4A843" stop-opacity="0"/></linearGradient></defs><path d="M 298,11 C 240,1 60,1 2,11" stroke="url(#cta-grad)"/></svg></span></h2>
       <div style="display:grid;grid-template-columns:1fr;max-width:400px;margin:40px auto 0; width:100%;">
         <div class="price-card highlight">
-          <div class="price-badge">خصم 59%</div>
+          <div class="price-badge">خصم 58%</div>
           <div style="margin-bottom:24px;">
             <div class="price-title" style="margin-bottom:12px;">سعر الدورة</div>
             <div class="price-sparkle-wrap" style="display:inline-block;">
@@ -1820,13 +1979,13 @@
               <span class="price-sparkle ps-4"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="rgba(255,255,255,0.85)"/></svg></span>
               <span class="price-sparkle ps-5"><svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="#D4A843"/></svg></span>
               <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
-                <span style="font-size:52px;font-weight:900;color:#fff;font-family:var(--font-en);line-height:1;">24</span>
-                <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">د.ك</span>
+                <span style="font-size:52px;font-weight:900;color:#fff;font-family:var(--font-en);line-height:1;">4184</span>
+                <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">ج.م</span>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:10px;">
-              <span style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">59 د.ك</span>
-              <span style="color:var(--text-secondary);font-size:14px;">(خصم 59%)</span>
+              <span style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">9961 ج.م</span>
+              <span style="color:var(--text-secondary);font-size:14px;">(خصم 58%)</span>
             </div>
           </div>
           <ul class="price-features">
@@ -1834,7 +1993,7 @@
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> شهادة إتمام معتمدة</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> تشمل القوالب والمرفقات العملية</li>
           </ul>
-          <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9#course-rating" class="btn btn-tadarab-primary" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;" target="_blank">
+          <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" class="btn btn-tadarab-primary" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;" target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             التسجيل في الدورة
           </a>
@@ -1849,10 +2008,10 @@
       <h2 class="text-center">الأسئلة الشائعة</h2>
       <div class="faq-container">
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>ما هي مدة الدورة؟</span><span class="faq-toggle">+</span></div><div class="faq-a">تتكون الدورة من 9 دروس تدريبية، بإجمالي <strong>2 ساعة و5 دقائق</strong> من المحتوى المكثف والعملي.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>هل أحتاج خبرة سابقة في Agile؟</span><span class="faq-toggle">+</span></div><div class="faq-a">لا، الدورة مصممة لتبدأ معك من الأساسيات وحتى المستويات المتقدمة في تطبيق المنهجيات الرشيقة.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>ما الفرق بين Scrum وKanban وXP؟</span><span class="faq-toggle">+</span></div><div class="faq-a">هذه جميعها أطر عمل تحت مظلة الأجايل، وسنتعرف على الفروق بينها وكيفية اختيار الأنسب لمشروعك خلال الدروس المخصصة لذلك.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>هل أحتاج خبرة سابقة في Agile؟</span><span class="faq-toggle">+</span></div><div class="faq-a">لا، لا تحتاج أي خبرة سابقة. هذه الدورة مصممة للمبتدئين وتبدأ معك من الصفر، وتشرح لك مفاهيم Agile بطريقة بسيطة وعملية.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>هل سأحصل على شهادة بعد إتمام الدورة؟</span><span class="faq-toggle">+</span></div><div class="faq-a">نعم، ستحصل على شهادة إتمام معتمدة من منصة تدرب بمجرد الانتهاء من جميع الدروس بنجاح.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>كيف يمكنني الوصول للدورة بعد الشراء؟</span><span class="faq-toggle">+</span></div><div class="faq-a">بمجرد الاشتراك، ستتمكن من تسجيل الدخول لحسابك في منصة تدرب والوصول إلى الدورة وأي دورات أخرى مشمولة في باقتك في أي وقت.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>هل يمكنني استرداد المبلغ إذا لم تعجبني الدورة؟</span><span class="faq-toggle">+</span></div><div class="faq-a">نعم، لديك <strong>ضمان ذهبي لمدة 30 يوماً</strong> مع استرداد كامل للمبلغ. بكل بساطة، إذا لم تجد القيمة التي تبحث عنها، يمكنك استرجاع المبلغ دون أي مخاطر.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>كيف يمكنني الوصول للدورة بعد الشراء؟</span><span class="faq-toggle">+</span></div><div class="faq-a">بمجرد الاشتراك، ستتمكن من تسجيل الدخول لحسابك في منصة تدرب والوصول إلى الدورة في أي وقت.</div></div>
       </div>
     </div>
   </section>
@@ -1863,7 +2022,7 @@
     <div class="container">
       <h2>ابدأ رحلتك في إدارة المشاريع المرنة اليوم</h2>
       <p>Join Gulf professionals mastering Agile</p>
-      <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9#course-rating" class="btn btn-tadarab-primary" target="_blank">ابدأ التعلم الآن</a>
+      <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" class="btn btn-tadarab-primary" target="_blank">ابدأ التعلم الآن</a>
     </div>
   </section>
 
