@@ -71,7 +71,7 @@
 
     h1, h2, h3, .font-ar-bold { font-weight: 700; }
     h1  { font-size: 68px; line-height: 1.15; }
-    h2  { font-size: 36px; line-height: 1.3; }
+    h2  { font-size: 42px; line-height: 1.3; }
     #learn-heading, #curriculum .section-title-wrap h2, .pricing-section h2.text-center { font-size: clamp(40px, 5vw, 58px); }
     h3  { font-size: 22px; line-height: 1.4; }
     .font-en { font-family: var(--font-en); }
@@ -137,8 +137,8 @@
     /* Price block */
     .hero-price-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
     .hero-price-main  { display: flex; align-items: baseline; gap: 6px; line-height: 1; }
-    .hero-price-num   { font-size: 52px; font-weight: 900; color: var(--accent-primary); font-family: var(--font-en); line-height: 1; text-shadow: 0 0 40px rgba(212,168,67,0.5); }
-    .hero-price-cur   { font-size: 20px; font-weight: 700; color: rgba(212,168,67,0.8); }
+    .hero-price-num   { font-size: 62px; font-weight: 900; color: var(--accent-primary); font-family: var(--font-en); line-height: 1; text-shadow: 0 0 40px rgba(212,168,67,0.5); }
+    .hero-price-cur   { font-size: 24px; font-weight: 700; color: rgba(212,168,67,0.8); }
     .hero-price-orig  { display: flex; align-items: center; gap: 8px; font-size: 15px; color: rgba(255,255,255,0.55); }
     .hero-price-orig .strike { text-decoration: line-through; font-family: var(--font-en); }
 
@@ -222,7 +222,7 @@
     /* ── Nav link ── */
     .web3-nav-link {
       display: inline-flex; align-items: center; gap: 6px;
-      font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.65);
+      font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.65);
       text-decoration: none; white-space: nowrap; cursor: pointer;
       font-family: var(--font-ar);
       padding: 8px 14px; border-radius: 6px;
@@ -318,12 +318,12 @@
       text-align: center;
     }
     .course-details-narrative .cd-highlight {
-      font-size: 20px; font-weight: 700; color: #fff; line-height: 1.75;
+      font-size: 24px; font-weight: 700; color: #fff; line-height: 1.75;
       margin-bottom: 24px; display: block;
       text-shadow: 0 1px 8px rgba(0,0,0,0.8);
     }
     .course-details-narrative p {
-      color: rgba(255,255,255,0.90); font-size: 16px;
+      color: rgba(255,255,255,0.90); font-size: 18px;
       line-height: 1.95; margin-bottom: 18px;
       text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     }
@@ -346,7 +346,7 @@
       background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
     }
     .course-details-card h3 {
-      font-size: 17px; font-weight: 800;
+      font-size: 20px; font-weight: 800;
       color: var(--accent-primary); margin-bottom: 22px;
       padding-bottom: 14px; border-bottom: 1px solid rgba(212,168,67,0.15);
     }
@@ -354,7 +354,7 @@
     .course-details-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .course-details-card ol li {
       display: flex; align-items: flex-start; gap: 12px;
-      color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.65;
+      color: rgba(255,255,255,0.85); font-size: 17px; line-height: 1.65;
     }
     .cd-num {
       flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
@@ -365,7 +365,7 @@
     }
     .course-details-card ul li {
       display: flex; align-items: flex-start; gap: 10px;
-      color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.65;
+      color: rgba(255,255,255,0.85); font-size: 17px; line-height: 1.65;
     }
     .course-details-card ul li::before {
       content: ''; flex-shrink: 0; width: 6px; height: 6px;
@@ -373,8 +373,8 @@
     }
     @media (max-width: 700px) {
       .course-details-grid { grid-template-columns: 1fr; }
-      .course-details-narrative .cd-highlight { font-size: 17px; }
-      .course-details-narrative p { font-size: 15px; }
+      .course-details-narrative .cd-highlight { font-size: 20px; }
+      .course-details-narrative p { font-size: 17px; }
     }
 
     /* ═══════════════════════════════════════════
@@ -405,8 +405,8 @@
       filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55)); object-fit: contain;
     }
     .learn-card-body { padding: 0 8px; text-align: center; flex: 1; display: flex; flex-direction: column; gap: 10px; border-top: none; }
-    .learn-card-body h3 { font-size: 17px; font-weight: 800; color: #FFF; line-height: 1.5; margin: 0; }
-    .learn-card-body p  { color: var(--text-secondary); font-size: 13px; line-height: 1.7; margin: 0; }
+    .learn-card-body h3 { font-size: 19px; font-weight: 800; color: #FFF; line-height: 1.5; margin: 0; }
+    .learn-card-body p  { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin: 0; }
     @media (max-width: 900px) { .learn-slider-track { grid-template-columns: repeat(2,1fr); gap: 40px 24px; } }
     @media (max-width: 600px) { .learn-slider-track { grid-template-columns: 1fr; } }
     @media (max-width: 480px) { .learn-slider-track { gap: 32px 16px; } }
@@ -424,8 +424,8 @@
     .curr-grid .learn-card-visual { aspect-ratio: 16/11; height: auto; overflow: hidden; border-radius: 0; padding: 0; margin-bottom: 0; width: 100%; }
     .curr-grid .learn-card-body  { padding: 20px; gap: 8px; align-items: flex-start; text-align: right; }
     .curr-chapter-label { font-size: 13px; font-weight: 700; color: var(--tadarab-primary); letter-spacing: 0.5px; }
-    .curr-grid .learn-card-body h3 { font-size: 18px; line-height: 1.4; }
-    .curr-card-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .curr-grid .learn-card-body h3 { font-size: 20px; line-height: 1.4; }
+    .curr-card-desc { font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
     .curr-summary { text-align: center; color: var(--text-secondary); font-size: 15px; margin-top: 16px; }
     .curr-summary strong { color: var(--tadarab-primary); font-family: var(--font-en); }
     .curr-card-time { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); font-family: var(--font-en); font-size: 13px; margin-top: 4px; }
@@ -645,6 +645,55 @@
     .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--text-secondary); line-height: 1.8; }
     .faq-item.active .faq-a { padding: 0 24px 24px; max-height: 200px; }
 
+    /* ── Floating CTA ── */
+    .floating-cta {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      z-index: 999;
+      opacity: 0;
+      transform: translateX(-50%) translateY(100px);
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+    .floating-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-primary, #BE1622);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(190,22,34,0.45), 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .floating-cta a:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 40px rgba(190,22,34,0.6), 0 2px 8px rgba(0,0,0,0.3);
+    }
+    /* Receive pulse when float button merges in */
+    @keyframes ctaReceivePulse {
+      0%   { transform: scale(1); }
+      30%  { transform: scale(1.12); }
+      58%  { transform: scale(0.95); }
+      80%  { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+    @keyframes ctaRingBurst {
+      0%   { transform: scale(0.6); opacity: 0.9; }
+      100% { transform: scale(2.8); opacity: 0; }
+    }
+    .cta-receive { animation: ctaReceivePulse 0.75s cubic-bezier(0.16,1,0.3,1) forwards !important; }
+    .cta-ring {
+      border: 2px solid rgba(190,22,34,0.55);
+      pointer-events: none;
+      animation: ctaRingBurst 0.65s ease-out forwards;
+    }
+
     /* ═══════════════════════════════════════════
        FINAL CTA + FOOTER
     ════════════════════════════════════════════ */
@@ -655,9 +704,9 @@
     .footer { background: var(--tadarab-bg); padding: 12px 0; border-top: 1px solid var(--border-color); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; direction: ltr; }
     .footer-dev { display: flex; align-items: center; gap: 10px; }
-    .footer-dev-text { font-family: 'Miniver', sans-serif; font-size: 18px; color: rgba(255,255,255,0.7); white-space: nowrap; }
-    .footer-dev a { display: flex; align-items: center; background: #fff; border-radius: 20px; padding: 2px 8px; }
-    .footer-dev img { height: 20px; width: auto; }
+    .footer-dev-text { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; }
+    .footer-dev a { display: flex; align-items: center; }
+    .footer-dev img { height: 16px; width: auto; }
     .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); direction: rtl; }
 
     /* ── Hand-drawn underline ── */
@@ -732,74 +781,91 @@
       .responsive-nav { padding: 16px 20px !important; justify-content: center !important; }
       .nav-links-wrapper { display: none !important; }
       .nav-btn { display: none !important; }
-      .inst2-photo-name { text-align: center !important; }
+      .inst2-photo-name { text-align: right !important; }
       .hero-content-web3 { padding-top: 140px !important; padding-left: 16px !important; padding-right: 16px !important; }
-      .hero-content-web3 p { font-size: 15px !important; max-width: 100% !important; }
+      .hero-content-web3 p { font-size: 17px !important; max-width: 100% !important; }
       .hero-heading-web3 { font-size: 32px !important; white-space: normal !important; line-height: 1.3 !important; }
-      .hero-badge-web3 { font-size: 11px !important; padding: 6px 12px !important; }
-      .hero-price-main { flex-direction: column !important; gap: 4px !important; }
+      /* Agile icon cards — single column on mobile */
+      .agile-icon-cards { grid-template-columns: 1fr !important; gap: 16px !important; }
+      /* Benefit cards — swap vertical dividers to horizontal when stacked */
+      .benefit-cards-wrap { flex-direction: column !important; }
+      .benefit-card { border-left: none !important; border-bottom: 1px solid rgba(255,255,255,0.22) !important; width: 100% !important; }
+      .benefit-card:last-child { border-bottom: none !important; }
+      .hero-badge-web3 { font-size: 13px !important; padding: 6px 12px !important; }
+      .hero-price-main { flex-direction: row !important; align-items: baseline !important; gap: 6px !important; }
       .hero-price-num { font-size: 42px !important; }
       .hero-price-orig { flex-direction: column !important; align-items: center !important; gap: 4px !important; }
+      /* Highlights bullets — full-width rows, icon pinned to first text line */
+      .stats-bar ul { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; padding: 0 8px !important; }
+      .stats-bar li { width: 100% !important; align-items: flex-start !important; gap: 8px !important; font-size: 17px !important; }
+      .stats-bar li span:first-child { flex-shrink: 0; margin-top: 2px; }
+      /* Agile section bullets — single column on mobile */
+      .agile-bullets { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .agile-bullet-item { width: 100% !important; }
+      .agile-bullet-full { grid-column: span 1 !important; }
       .hero-benefits-row { gap: 0 12px !important; }
-      .hero-benefits-row > span[style] { font-size: 15px !important; white-space: nowrap !important; }
-      .hero-benefit-num { font-size: 15px !important; }
+      .hero-benefits-row > span[style] { font-size: 17px !important; white-space: nowrap !important; }
+      .hero-benefit-num { font-size: 17px !important; }
       .hero-btn { width: 100% !important; padding: 1px !important; }
-      .hero-btn-inner { width: 100% !important; padding: 14px 20px !important; font-size: 14px !important; }
+      .hero-btn-inner { width: 100% !important; padding: 14px 20px !important; font-size: 16px !important; }
       .video-section { padding: 0px 16px 24px !important; }
-      .video-section-title { font-size: 24px !important; }
-      .video-section-sub { font-size: 14px !important; }
+      .video-section-title { font-size: 28px !important; }
+      .video-section-sub { font-size: 16px !important; }
       .video-section-overlay { padding-bottom: 20px !important; }
       .play-btn { width: 72px !important; height: 72px !important; }
       .play-btn svg { width: 24px !important; height: 24px !important; }
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px !important; }
       .stat-item { padding: 24px 12px !important; }
-      .stat-num { font-size: 32px !important; }
-      .stat-label-ar { font-size: 14px !important; }
+      .stat-num { font-size: 36px !important; }
+      .stat-label-ar { font-size: 16px !important; }
       .stat-item:nth-child(2)::after { display: none; }
       .stat-item:nth-child(n+3) { margin-top: 20px !important; }
-      #learn-heading { font-size: 28px !important; }
+      #learn-heading { font-size: 32px !important; }
       .learn-card-visual { height: 120px !important; }
-      .learn-card-body h3 { font-size: 15px !important; }
-      .learn-card-body p { font-size: 12px !important; }
+      .learn-card-body h3 { font-size: 18px !important; }
+      .learn-card-body p { font-size: 15px !important; }
       .curr-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
       .curr-card-time svg { width: 11px !important; height: 11px !important; }
       .cert-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
       .cert-visual { order: -1 !important; margin-bottom: 24px !important; }
-      .cert-heading { font-size: 28px !important; }
-      .cert-desc { font-size: 14px !important; }
+      .cert-heading { font-size: 32px !important; }
+      .cert-desc { font-size: 16px !important; }
       .cert-benefits { gap: 12px !important; }
-      .cert-benefits li { font-size: 14px !important; }
+      .cert-benefits li { font-size: 16px !important; }
       .cert-img { max-width: 100% !important; }
       .inst2-wrap { grid-template-columns: 1fr !important; gap: 32px !important; }
       .inst2-photo-card { max-width: 320px !important; margin: 0 auto !important; }
       .inst2-photo { aspect-ratio: 3/4; }
       .inst2-stats { grid-template-columns: repeat(2,1fr) !important; }
-      .inst2-bio { font-size: 14px !important; }
+      .inst2-bio { font-size: 16px !important; }
       .inst2-cert { padding: 5px 10px !important; font-size: 11px !important; }
       .inst2-certs { justify-content: center !important; }
-      .pricing-section h2 { font-size: 28px !important; }
+      .pricing-section h2 { font-size: 32px !important; }
       .price-card { padding: 24px 20px !important; }
-      .price-features li { font-size: 14px !important; }
+      .price-features li { font-size: 16px !important; }
       .faq-item { border-radius: 8px !important; }
-      .faq-q { padding: 16px !important; font-size: 15px !important; }
-      .faq-a { padding: 0 16px 16px !important; font-size: 14px !important; }
-      .final-cta h2 { font-size: 32px !important; }
-      .final-cta p { font-size: 16px !important; }
-      .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 14px; }
-      .footer-dev { flex-direction: row; align-items: center; justify-content: center; }
+      .faq-q { padding: 16px !important; font-size: 17px !important; }
+      .faq-a { padding: 0 16px !important; font-size: 16px !important; }
+      .faq-item.active .faq-a { padding: 0 16px 16px !important; }
+      .final-cta h2 { font-size: 36px !important; }
+      .final-cta p { font-size: 18px !important; }
+      .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 8px; }
+      .footer-dev { flex-direction: row; align-items: center; }
+      .footer-copy { font-size: 11px; }
     }
     @media (max-width: 480px) {
       .hero-heading-web3 { font-size: 26px !important; }
-      .hero-content-web3 p { font-size: 14px !important; }
-      .hero-price-num { font-size: 36px !important; }
-      .stat-num { font-size: 28px !important; }
+      .hero-content-web3 p { font-size: 16px !important; }
+      .hero-price-num { font-size: 38px !important; }
+      .stat-num { font-size: 32px !important; }
       .play-btn { width: 64px !important; height: 64px !important; }
       .play-btn svg { width: 20px !important; height: 20px !important; }
-      .learn-card-body h3 { font-size: 14px !important; }
-      .learn-card-body p { font-size: 11px !important; }
-      .curr-card-desc { font-size: 13px !important; }
-      .faq-q { font-size: 14px !important; padding: 14px !important; }
-      .faq-a { font-size: 13px !important; padding: 0 14px 14px !important; }
+      .learn-card-body h3 { font-size: 17px !important; }
+      .learn-card-body p { font-size: 15px !important; }
+      .curr-card-desc { font-size: 15px !important; }
+      .faq-q { font-size: 16px !important; padding: 14px !important; }
+      .faq-a { font-size: 15px !important; padding: 0 14px !important; }
+      .faq-item.active .faq-a { padding: 0 14px 14px !important; }
     }
     @media (max-width: 1024px) {
       .price-card.highlight { transform: none; }
@@ -873,8 +939,8 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 30px rgba(212,168,67,0.06) !important;
     }
     .curr-chapter-label { color: rgba(255,255,255,0.4) !important; }
-    .curr-grid .learn-card-body h3 { color: #fff !important; font-size: 17px !important; }
-    .curr-card-desc { color: rgba(255,255,255,0.45) !important; }
+    .curr-grid .learn-card-body h3 { color: #fff !important; font-size: 20px !important; }
+    .curr-card-desc { color: rgba(255,255,255,0.55) !important; font-size: 16px !important; }
     .curr-card-time { color: rgba(255,255,255,0.3) !important; }
     .curr-summary   { color: rgba(255,255,255,0.4) !important; }
     .curr-summary strong { color: rgba(255,255,255,0.75) !important; }
@@ -1291,12 +1357,12 @@
     <div class="hero-content-web3" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:clamp(220px,30vh,360px);padding-bottom:40px;padding-left:24px;padding-right:24px;gap:24px;">
 
       <!-- Heading -->
-      <h1 class="hero-heading-web3" style="font-size:clamp(28px,4.8vw,62px);font-weight:700;line-height:1.3;max-width:900px;font-family:var(--font-ar);">
-        أتقن أساسيات الأجايل ( Agile ) في ساعتين فقط
+      <h1 class="hero-heading-web3" style="font-size:clamp(32px,5.2vw,68px);font-weight:700;line-height:1.3;max-width:900px;font-family:var(--font-ar);">
+        أتقن أساسيات الأجايل <span style="white-space:nowrap;">( Agile )</span> في ساعتين فقط
       </h1>
 
       <!-- Subtitle -->
-      <p style="font-size:clamp(15px,1.6vw,20px);font-family:var(--font-ar);color:rgba(255,255,255,0.75);max-width:700px;line-height:1.8;margin-top:4px;margin-bottom:4px;">
+      <p style="font-size:clamp(17px,1.8vw,23px);font-family:var(--font-ar);color:rgba(255,255,255,0.75);max-width:700px;line-height:1.8;margin-top:4px;margin-bottom:4px;">
         دورة عملية ومركزة تشرح لك الأجايل ببساطة، وتساعدك على تطبيقه مباشرة في مشاريعك — بدون تعقيد أو تنظير.
       </p>
 
@@ -1321,9 +1387,9 @@
 
       <!-- CTA -->
       <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" class="hero-btn" target="_blank">
-        <span class="hero-btn-inner" style="font-family:var(--font-ar);font-size:16px;">ابدأ رحلتك لعالم الأجايل (Agile) الآن</span>
+        <span class="hero-btn-inner" style="font-family:var(--font-ar);font-size:19px;">ابدأ رحلتك لعالم الأجايل (Agile) الآن</span>
       </a>
-      <p style="font-family:var(--font-ar);font-size:14px;color:rgba(255,255,255,0.6);margin-top:4px;">جرّب الدورة بثقة — ضمان استرداد كامل لمدة 30 يوماً</p>
+      <p style="font-family:var(--font-ar);font-size:17px;color:rgba(255,255,255,0.6);margin-top:4px;">جرّب الدورة بثقة — ضمان استرداد كامل لمدة 30 يوماً</p>
 
     </div>
   </div>
@@ -1387,11 +1453,11 @@
   <div class="stats-bar">
     <div class="container" style="padding-top:32px;padding-bottom:32px;">
       <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 40px;direction:rtl;text-align:right;">
-        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</li>
-        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</li>
-        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ابدأ التطبيق من أول يوم</li>
-        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> بدون تعقيد أو تنظير</li>
-        <li style="font-family:var(--font-ar);font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> أمثلة وحالات واقعية</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> ابدأ التطبيق من أول يوم</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> بدون تعقيد أو تنظير</li>
+        <li style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:10px;"><span style="color:#D4A843;font-size:1.1em;">✦</span> أمثلة وحالات واقعية</li>
       </ul>
     </div>
   </div>
@@ -1407,7 +1473,7 @@
         <h2 style="font-family:var(--font-ar);font-size:clamp(26px,3.4vw,48px);font-weight:700;color:#fff;line-height:1.45;margin-bottom:18px;">
           لماذا تفشل المشاريع<br>رغم التخطيط الجيد؟
         </h2>
-        <p style="font-family:var(--font-ar);font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,0.5);line-height:2;margin:0;">
+        <p style="font-family:var(--font-ar);font-size:clamp(17px,1.7vw,21px);color:rgba(255,255,255,0.5);line-height:2;margin:0;">
           تبدأ المشاريع بخطة واضحة... لكن مع أول تغيير في المتطلبات:
         </p>
       </div>
@@ -1420,33 +1486,33 @@
           <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
             <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.7);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">01</span>
             <div>
-              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">تتأخر المواعيد!</h3>
-              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">الجداول الزمنية تنهار مع أول تعديل في المتطلبات</p>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(19px,2vw,24px);font-weight:700;margin:0 0 8px;">تتأخر المواعيد!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.5);font-size:clamp(14px,1.2vw,16px);margin:0;line-height:1.8;">الجداول الزمنية تنهار مع أول تعديل في المتطلبات</p>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
             <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.7);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">02</span>
             <div>
-              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">تتغير الأولويات!</h3>
-              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">ما كان مهماً بالأمس يصبح ثانوياً اليوم بلا أسباب واضحة</p>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(19px,2vw,24px);font-weight:700;margin:0 0 8px;">تتغير الأولويات!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.5);font-size:clamp(14px,1.2vw,16px);margin:0;line-height:1.8;">ما كان مهماً بالأمس يصبح ثانوياً اليوم بلا أسباب واضحة</p>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:24px;padding:28px 0;">
             <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.7);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">03</span>
             <div>
-              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.6vw,19px);font-weight:700;margin:0 0 6px;">ويصبح التحكم في المشروع أصعب!</h3>
-              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.4);font-size:14px;margin:0;line-height:1.8;">تجد نفسك تطارد التغييرات بدلاً من قيادة المشروع</p>
+              <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(19px,2vw,24px);font-weight:700;margin:0 0 8px;">ويصبح التحكم في المشروع أصعب!</h3>
+              <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.5);font-size:clamp(14px,1.2vw,16px);margin:0;line-height:1.8;">تجد نفسك تطارد التغييرات بدلاً من قيادة المشروع</p>
             </div>
           </div>
         </div>
 
         <!-- Conclusion card -->
-        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.07) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(212,168,67,0.18);border-radius:24px;padding:44px 36px;">
-          <div style="width:44px;height:3px;background:linear-gradient(90deg,#D4A843,rgba(212,168,67,0.2));border-radius:2px;margin-bottom:28px;"></div>
-          <p style="font-family:var(--font-ar);font-size:clamp(17px,1.7vw,21px);font-weight:700;color:#fff;line-height:1.7;margin:0 0 20px;">
+        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.07) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(212,168,67,0.18);border-radius:24px;padding:56px 44px;">
+          <div style="width:44px;height:3px;background:linear-gradient(90deg,#D4A843,rgba(212,168,67,0.2));border-radius:2px;margin-bottom:32px;"></div>
+          <p style="font-family:var(--font-ar);font-size:clamp(20px,2vw,26px);font-weight:700;color:#fff;line-height:1.7;margin:0 0 22px;">
             المشكلة ليست فيك أو في طبيعة المشروع...
           </p>
-          <p style="font-family:var(--font-ar);font-size:clamp(15px,1.4vw,17px);color:rgba(255,255,255,0.65);line-height:2;margin:0;">
+          <p style="font-family:var(--font-ar);font-size:clamp(17px,1.6vw,20px);color:rgba(255,255,255,0.65);line-height:2;margin:0;">
             المشكلة في <strong style="color:#D4A843;">الأسلوب التقليدي</strong> لإدارة المشاريع — الذي لم يُصمَّم أصلاً للتعامل مع التغيير.
           </p>
         </div>
@@ -1466,63 +1532,35 @@
           الحل ليس فقط في خطة أفضل...<br>
           <span style="color:#D4A843;">بل في أسلوب أفضل</span>
         </h2>
-        <p style="font-family:var(--font-ar);font-size:clamp(15px,1.4vw,18px);color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.9;">
+        <p style="font-family:var(--font-ar);font-size:clamp(17px,1.7vw,21px);color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.9;">
           الأجايل ليس مجرد منهجية... بل طريقة تفكير تساعدك على:
         </p>
       </div>
 
       <!-- Course highlights list -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px 28px;max-width:700px;margin:0 auto 52px;direction:rtl;">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="color:#D4A843;font-size:16px;line-height:1;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(13px,1.2vw,15px);color:rgba(255,255,255,0.75);">ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</span>
+      <div class="agile-bullets" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;max-width:700px;margin:0 auto 52px;direction:rtl;">
+        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
+          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</span>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="color:#D4A843;font-size:16px;line-height:1;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(13px,1.2vw,15px);color:rgba(255,255,255,0.75);">مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</span>
+        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
+          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</span>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="color:#D4A843;font-size:16px;line-height:1;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(13px,1.2vw,15px);color:rgba(255,255,255,0.75);">ابدأ التطبيق من أول يوم</span>
+        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
+          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">ابدأ التطبيق من أول يوم</span>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="color:#D4A843;font-size:16px;line-height:1;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(13px,1.2vw,15px);color:rgba(255,255,255,0.75);">بدون تعقيد أو تنظير</span>
+        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
+          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">بدون تعقيد أو تنظير</span>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="color:#D4A843;font-size:16px;line-height:1;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(13px,1.2vw,15px);color:rgba(255,255,255,0.75);">أمثلة وحالات واقعية</span>
+        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
+          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">أمثلة وحالات واقعية</span>
         </div>
       </div>
 
-      <!-- Three Agile benefit cards -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-
-        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
-          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          </div>
-          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">التكيف مع التغيير</h3>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">بدلاً من مقاومة التغيير، تتعلم كيف تجعله في صالحك وتستفيد منه</p>
-        </div>
-
-        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
-          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z"/></svg>
-          </div>
-          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">تسليم قيمة بشكل تدريجي ومستمر</h3>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">تُسلّم نتائج حقيقية وملموسة في كل مرحلة دون انتظار نهاية المشروع</p>
-        </div>
-
-        <div style="background:linear-gradient(140deg,rgba(212,168,67,0.09) 0%,rgba(212,168,67,0.03) 100%);border:1px solid rgba(212,168,67,0.22);border-radius:20px;padding:40px 28px;text-align:center;">
-          <div style="width:64px;height:64px;background:rgba(212,168,67,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(16px,1.5vw,19px);font-weight:700;margin:0 0 12px;">إدارة المشروع بمرونة وثقة</h3>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:14px;line-height:1.9;margin:0;">تتحكم في مشروعك بثقة حتى عند مواجهة الغموض والتعقيد</p>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -1552,18 +1590,18 @@
       </div>
 
       <!-- Three benefits as horizontal row with vertical separators -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:860px;margin:0 auto 56px;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;">
-        <div style="flex:1;min-width:200px;padding:36px 28px;text-align:center;border-left:1px solid rgba(255,255,255,0.08);">
-          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(15px,1.5vw,18px);font-weight:700;margin:0 0 10px;">التكيف مع التغيير</p>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.45);font-size:13px;line-height:1.9;margin:0;">بدل مقاومته واستنزاف الجهد</p>
+      <div class="benefit-cards-wrap" style="display:flex;flex-wrap:nowrap;justify-content:center;gap:0;max-width:1100px;margin:0 auto 56px;border:1px solid rgba(255,255,255,0.22);border-radius:20px;overflow:hidden;">
+        <div class="benefit-card" style="flex:1;padding:36px 32px;text-align:center;border-left:1px solid rgba(255,255,255,0.22);">
+          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(22px,2.2vw,30px);font-weight:700;margin:0 0 10px;white-space:nowrap;">التكيف مع التغيير</p>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(16px,1.5vw,20px);line-height:1.9;margin:0;white-space:nowrap;">بدل مقاومته واستنزاف الجهد</p>
         </div>
-        <div style="flex:1;min-width:200px;padding:36px 28px;text-align:center;border-left:1px solid rgba(255,255,255,0.08);">
-          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(15px,1.5vw,18px);font-weight:700;margin:0 0 10px;">تسليم قيمة مستمرة</p>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.45);font-size:13px;line-height:1.9;margin:0;">في كل مرحلة دون انتظار النهاية</p>
+        <div class="benefit-card" style="flex:1;padding:36px 32px;text-align:center;border-left:1px solid rgba(255,255,255,0.22);">
+          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(22px,2.2vw,30px);font-weight:700;margin:0 0 10px;white-space:nowrap;">تسليم قيمة مستمرة</p>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(16px,1.5vw,20px);line-height:1.9;margin:0;white-space:nowrap;">في كل مرحلة دون انتظار النهاية</p>
         </div>
-        <div style="flex:1;min-width:200px;padding:36px 28px;text-align:center;">
-          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(15px,1.5vw,18px);font-weight:700;margin:0 0 10px;">إدارة المشروع بمرونة</p>
-          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.45);font-size:13px;line-height:1.9;margin:0;">حتى في مواجهة الغموض والتعقيد</p>
+        <div class="benefit-card" style="flex:1;padding:36px 32px;text-align:center;">
+          <p style="font-family:var(--font-ar);color:#D4A843;font-size:clamp(22px,2.2vw,30px);font-weight:700;margin:0 0 10px;white-space:nowrap;">إدارة المشروع بمرونة</p>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(16px,1.5vw,20px);line-height:1.9;margin:0;white-space:nowrap;">حتى في مواجهة الغموض والتعقيد</p>
         </div>
       </div>
 
@@ -2045,6 +2083,11 @@
     </div>
   </section>
 
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="https://www.tadarab.com/course/%D8%AF%D9%88%D8%B1%D8%A9-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A7%D8%AA-%D9%88-%D9%85%D8%A8%D8%A7%D8%AF%D8%A6-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%86%D8%A9?code=TW9oYW1tZWQgQmluIEFza2FyU2hhcmluZw&aid=4185" target="_blank">ابدأ التعلم الآن</a>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -2052,10 +2095,10 @@
         <div class="footer-dev">
           <span class="footer-dev-text">Developed by</span>
           <a href="https://miduva.com/" target="_blank" rel="noopener noreferrer">
-            <img src="/miduva-Logo-En-1-300x64.png" alt="Miduva" />
+            <img src="/Logo white.png" alt="Miduva" />
           </a>
         </div>
-<span class="footer-copy">جميع الحقوق محفوظة © 2025</span>
+<span class="footer-copy">جميع الحقوق محفوظة © 2026</span>
       </div>
     </div>
   </footer>
@@ -2201,6 +2244,219 @@
       });
     }
   }
+
+  // Floating CTA
+  (function initFloatingCta() {
+    var wrap     = document.getElementById('floatingCta');
+    var hero     = document.querySelector('.hero-web3') || document.querySelector('section');
+    var finalCta = document.querySelector('.final-cta');
+    var finalBtn = finalCta ? finalCta.querySelector('.btn-tadarab-primary') : null;
+    if (!wrap || !finalBtn) return;
+
+    var state        = 'hidden'; // 'hidden' | 'visible' | 'merging' | 'merged'
+    var rafId        = null;
+    var receiveFired = false;
+
+    // Animated position (screen-space center of the floating button)
+    var animCX = 0, animCY = 0, animSc = 1;
+
+    /* ── helpers ── */
+    function setWrap(transition, transform, opacity, pe) {
+      wrap.style.transition    = transition;
+      wrap.style.transform     = transform;
+      wrap.style.opacity       = String(opacity);
+      wrap.style.pointerEvents = pe;
+    }
+
+    // The floating button's natural screen-center when sitting at its home (bottom: 28px)
+    function homeCenter() {
+      return {
+        x: window.innerWidth  / 2,
+        y: window.innerHeight - 28 - wrap.offsetHeight / 2
+      };
+    }
+
+    // Convert a desired screen-center (cx, cy) + scale into the CSS transform string
+    function buildTransform(cx, cy, sc) {
+      var hc = homeCenter();
+      var dx = cx - hc.x;
+      var dy = cy - hc.y;
+      return 'translateX(calc(-50% + ' + dx.toFixed(1) + 'px)) translateY(' + dy.toFixed(1) + 'px) scale(' + sc.toFixed(3) + ')';
+    }
+
+    /* ── receive burst on the final button ── */
+    function triggerReceive() {
+      finalBtn.classList.remove('cta-receive');
+      void finalBtn.offsetWidth;
+      finalBtn.classList.add('cta-receive');
+      setTimeout(function () { finalBtn.classList.remove('cta-receive'); }, 800);
+      var t = finalBtn.getBoundingClientRect();
+      var ring = document.createElement('span');
+      ring.className = 'cta-ring';
+      ring.style.cssText = [
+        'position:fixed',
+        'left:'   + (t.left   - 3) + 'px',
+        'top:'    + (t.top    - 3) + 'px',
+        'width:'  + (t.width  + 6) + 'px',
+        'height:' + (t.height + 6) + 'px',
+        'border-radius:' + (t.height / 2 + 3) + 'px',
+        'z-index:9998'
+      ].join(';');
+      document.body.appendChild(ring);
+      setTimeout(function () { if (ring.parentNode) ring.parentNode.removeChild(ring); }, 700);
+    }
+
+    /* ── MERGE: spring-lerp chase loop, tracks final button live every frame ──
+       Triggers BEFORE the final button is visible so the user sees the full journey.
+       animCX/animCY/animSc are persistent and survive state changes.           */
+    function startMerge() {
+      if (state !== 'visible') return;
+      state = 'merging';
+      receiveFired = false;
+
+      // Boot animated position at current home
+      var hc = homeCenter();
+      animCX = hc.x;
+      animCY = hc.y;
+      animSc = 1;
+
+      wrap.style.transition    = 'none';
+      wrap.style.pointerEvents = 'none';
+      wrap.style.opacity       = '1';
+
+      if (rafId) cancelAnimationFrame(rafId);
+
+      function frame() {
+        if (state !== 'merging') return; // cancelled externally
+
+        var tRect    = finalBtn.getBoundingClientRect();
+        var targetCX = tRect.left + tRect.width  / 2;
+        var targetCY = tRect.top  + tRect.height / 2;
+        var wh       = wrap.offsetHeight || 52;
+        var targetSc = Math.min(tRect.width / wrap.offsetWidth, tRect.height / wh);
+
+        // Smooth spring-lerp: 8 % per frame — produces ease-in-out feel
+        var LF = 0.08;
+        animCX += (targetCX - animCX) * LF;
+        animCY += (targetCY - animCY) * LF;
+        animSc += (targetSc - animSc) * LF;
+
+        var dist = Math.sqrt(
+          (targetCX - animCX) * (targetCX - animCX) +
+          (targetCY - animCY) * (targetCY - animCY)
+        );
+
+        // Stay fully visible during travel; fade only in the last 55 px
+        var opacity = dist < 55 ? Math.max(0, dist / 55) : 1;
+
+        wrap.style.transform = buildTransform(animCX, animCY, animSc);
+        wrap.style.opacity   = opacity.toFixed(3);
+
+        // Snapped close enough → merge complete
+        if (!receiveFired && dist < 5) {
+          receiveFired     = true;
+          state            = 'merged';
+          wrap.style.opacity = '0';
+          triggerReceive();
+          rafId = null;
+          return;
+        }
+
+        // Final button scrolled back off-screen downward → abort, float back home
+        if (tRect.top > window.innerHeight + 60) {
+          state = 'visible';
+          setWrap(
+            'transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
+            'translateX(-50%) translateY(0)', 1, 'auto'
+          );
+          rafId = null;
+          return;
+        }
+
+        rafId = requestAnimationFrame(frame);
+      }
+
+      rafId = requestAnimationFrame(frame);
+    }
+
+    /* ── SHOW: rise from below, or emerge from the final-button's position ── */
+    function show() {
+      if (state === 'visible') return;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      var fromMerge = (state === 'merged' || state === 'merging');
+      state = 'visible';
+
+      if (fromMerge) {
+        // Re-use current animCX/animCY (wherever the button ended up) as emerge start
+        setWrap('none', buildTransform(animCX, animCY, animSc), 0, 'none');
+        void wrap.offsetWidth;
+        setWrap(
+          'transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease 0.06s',
+          'translateX(-50%) translateY(0)', 1, 'auto'
+        );
+      } else {
+        setWrap('none', 'translateX(-50%) translateY(100px)', 0, 'none');
+        void wrap.offsetWidth;
+        setWrap(
+          'transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.45s ease',
+          'translateX(-50%) translateY(0)', 1, 'auto'
+        );
+      }
+    }
+
+    /* ── HIDE ── */
+    function hide() {
+      if (state === 'hidden') return;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      state = 'hidden';
+      setWrap('transform 0.35s ease, opacity 0.28s ease', 'translateX(-50%) translateY(100px)', 0, 'none');
+    }
+
+    /* ── SCROLL HANDLER ── */
+    function onScroll() {
+      var scrollY    = window.scrollY || window.pageYOffset;
+      var heroBottom = hero ? hero.getBoundingClientRect().bottom + scrollY : 400;
+      var pastHero   = scrollY > heroBottom - 200;
+
+      // Kick off merge early — when the final-cta SECTION is ~200 px below the fold
+      // (final button is still off-screen but on its way up)
+      var ctaRect       = finalCta.getBoundingClientRect();
+      var ctaApproaching = ctaRect.top < window.innerHeight + 200;
+
+      if (ctaApproaching) {
+        if (state === 'visible') startMerge();
+        // If already merging/merged, leave it alone
+      } else if (pastHero) {
+        // Section has scrolled back below trigger line
+        if (state === 'merging') {
+          // Button is mid-flight; let the abort-logic inside rAF handle it
+          // (it checks tRect.top > innerHeight + 60) — force it here:
+          state = 'visible';
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+          setWrap(
+            'transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
+            'translateX(-50%) translateY(0)', 1, 'auto'
+          );
+        } else {
+          show();
+        }
+      } else {
+        // Above the hero
+        if (state === 'merged' || state === 'merging') {
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+          state = 'hidden';
+          setWrap('none', 'translateX(-50%) translateY(100px)', 0, 'none');
+        } else {
+          hide();
+        }
+      }
+    }
+
+    // Boot
+    setWrap('none', 'translateX(-50%) translateY(100px)', 0, 'none');
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }());
 
   // FAQ
   window.toggleFaq = function (el) {
