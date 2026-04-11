@@ -12,7 +12,7 @@
   <!-- Arabic + English fonts (Google) — non-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Miniver&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Miniver&display=block" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" media="print" onload="this.media='all'" />
@@ -278,7 +278,7 @@
       animation: pulsePlay 3s ease-in-out infinite; padding: 0;
     }
     .play-btn:hover { transform: translate(-50%,-50%) scale(1.08); animation: none; background: rgba(255,255,255,0.15); box-shadow: 0 0 30px rgba(255,255,255,0.12); }
-    .play-btn svg   { width: 30px; height: 30px; fill: #FFF; margin-left: 4px; }
+    .play-btn svg   { width: 32px; height: 32px; fill: #FFF; margin-left: 3px; }
     @keyframes pulsePlay {
       0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.0), 0 0 0 8px rgba(255,255,255,0.06); }
       50%     { box-shadow: 0 0 0 0 rgba(255,255,255,0.0), 0 0 0 18px rgba(255,255,255,0.03); }
@@ -484,7 +484,7 @@
     /* Photo card */
     .inst2-photo-card {
       position: relative; border-radius: 20px; overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.07), 0 32px 80px rgba(0,0,0,0.6), 0 0 60px rgba(190,22,34,0.12);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.07), 0 32px 80px rgba(0,0,0,0.6), 0 0 60px rgba(212,168,67,0.12);
     }
     .inst2-photo {
       width: 100%; aspect-ratio: 3/4; object-fit: cover;
@@ -508,15 +508,15 @@
     }
     .inst2-exp-num { font-size: 22px; font-weight: 900; color: #fff; font-family: var(--font-en); line-height: 1; display: block; }
     .inst2-exp-lbl { font-size: 10px; color: rgba(255,255,255,0.45); display: block; margin-top: 3px; white-space: nowrap; }
-    /* Red accent bar on photo card left edge */
+    /* Gold accent bar on photo card left edge */
     .inst2-photo-card::after {
       content: ''; position: absolute; top: 15%; bottom: 15%; left: 0;
-      width: 3px; background: var(--tadarab-primary); border-radius: 0 2px 2px 0;
+      width: 3px; background: #D4A843; border-radius: 0 2px 2px 0;
     }
     /* Content col */
     .inst2-content { direction: rtl; text-align: right; padding-top: 8px; }
     .inst2-name { font-size: clamp(26px,3vw,40px); font-weight: 900; color: #fff; margin: 0 0 6px; line-height: 1.2; }
-    .inst2-role { font-size: 15px; color: rgba(255,255,255,0.5); margin: 0 0 32px; font-weight: 500; }
+    .inst2-role { font-size: 18px; color: rgba(255,255,255,0.5); margin: 0 0 32px; font-weight: 500; }
     /* Stats */
     .inst2-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-bottom: 32px; }
     .inst2-stat {
@@ -528,11 +528,11 @@
     .inst2-stat-num { font-size: 32px; font-weight: 900; color: #fff; font-family: var(--font-en); line-height: 1; display: block; }
     .inst2-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.4); display: block; margin-top: 6px; }
     /* Bio */
-    .inst2-bio { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.95; margin-bottom: 28px; }
+    .inst2-bio { font-size: 18px; color: rgba(255,255,255,0.55); line-height: 1.95; margin-bottom: 28px; }
     /* Divider */
     .inst2-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 24px; }
     /* Certs */
-    .inst2-certs-hd { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-family: var(--font-en); }
+    .inst2-certs-hd { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-family: var(--font-en); }
     .inst2-certs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
     .inst2-cert {
       position: relative; display: inline-flex; align-items: center;
@@ -571,12 +571,12 @@
     /* PMI note */
     .inst2-note {
       display: flex; gap: 16px; align-items: flex-start;
-      border-right: 3px solid var(--tadarab-primary);
-      padding: 14px 18px; background: rgba(190,22,34,0.06);
+      border-right: 3px solid #D4A843;
+      padding: 14px 18px; background: rgba(212,168,67,0.06);
       border-radius: 0 10px 10px 0;
     }
-    .inst2-note-icon { color: var(--tadarab-primary); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .inst2-note p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; margin: 0; }
+    .inst2-note-icon { color: #D4A843; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .inst2-note p { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.8; margin: 0; }
     .inst2-note strong { color: rgba(255,255,255,0.8); }
     @media (max-width: 960px) {
       .inst2-wrap { grid-template-columns: 1fr; gap: 40px; }
@@ -663,8 +663,8 @@
       background: var(--accent-primary, #BE1622);
       color: #fff;
       font-weight: 700;
-      font-size: 15px;
-      padding: 14px 32px;
+      font-size: 17px;
+      padding: 16px 38px;
       border-radius: 50px;
       text-decoration: none;
       white-space: nowrap;
@@ -684,7 +684,7 @@
       100% { transform: scale(1); }
     }
     @keyframes ctaRingBurst {
-      0%   { transform: scale(0.6); opacity: 0.9; }
+      0%   { transform: scale(1.2); opacity: 1; }
       100% { transform: scale(2.8); opacity: 0; }
     }
     .cta-receive { animation: ctaReceivePulse 0.75s cubic-bezier(0.16,1,0.3,1) forwards !important; }
@@ -812,8 +812,8 @@
       .video-section-title { font-size: 28px !important; }
       .video-section-sub { font-size: 16px !important; }
       .video-section-overlay { padding-bottom: 20px !important; }
-      .play-btn { width: 72px !important; height: 72px !important; }
-      .play-btn svg { width: 24px !important; height: 24px !important; }
+      .play-btn { width: 76px !important; height: 76px !important; }
+      .play-btn svg { width: 30px !important; height: 30px !important; margin-left: 4px !important; }
       .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px !important; }
       .stat-item { padding: 24px 12px !important; }
       .stat-num { font-size: 36px !important; }
@@ -837,9 +837,10 @@
       .inst2-photo-card { max-width: 320px !important; margin: 0 auto !important; }
       .inst2-photo { aspect-ratio: 3/4; }
       .inst2-stats { grid-template-columns: repeat(2,1fr) !important; }
-      .inst2-bio { font-size: 16px !important; }
-      .inst2-cert { padding: 5px 10px !important; font-size: 11px !important; }
-      .inst2-certs { justify-content: center !important; }
+      .inst2-bio { font-size: 17px !important; }
+      .inst2-cert { padding: 7px 12px !important; font-size: 12px !important; }
+      .inst2-certs { justify-content: center !important; gap: 10px !important; flex-wrap: wrap !important; }
+      .inst2-certs-hd { font-size: 13px !important; text-align: center !important; }
       .pricing-section h2 { font-size: 32px !important; }
       .price-card { padding: 24px 20px !important; }
       .price-features li { font-size: 16px !important; }
@@ -852,20 +853,35 @@
       .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 8px; }
       .footer-dev { flex-direction: row; align-items: center; }
       .footer-copy { font-size: 11px; }
+
+      /* ── Section spacing ── */
+      /* Reduce all section vertical padding: 80px → 44px */
+      .section { padding: 44px 0 !important; }
+      /* Inline-style overrides on specific sections also need !important to win */
+      #curriculum  { padding-bottom: 20px !important; }
+      #instructor  { padding-top: 0 !important; }
+      /* Final CTA was 120px — reduce to 60px */
+      .final-cta { padding: 60px 0 !important; }
+      /* Hero section bottom breathing room */
+      .hero-web3 { padding-bottom: 56px !important; }
     }
     @media (max-width: 480px) {
       .hero-heading-web3 { font-size: 26px !important; }
       .hero-content-web3 p { font-size: 16px !important; }
       .hero-price-num { font-size: 38px !important; }
       .stat-num { font-size: 32px !important; }
-      .play-btn { width: 64px !important; height: 64px !important; }
-      .play-btn svg { width: 20px !important; height: 20px !important; }
+      .play-btn { width: 68px !important; height: 68px !important; }
+      .play-btn svg { width: 26px !important; height: 26px !important; margin-left: 4px !important; }
       .learn-card-body h3 { font-size: 17px !important; }
       .learn-card-body p { font-size: 15px !important; }
       .curr-card-desc { font-size: 15px !important; }
       .faq-q { font-size: 16px !important; padding: 14px !important; }
       .faq-a { font-size: 15px !important; padding: 0 14px !important; }
       .faq-item.active .faq-a { padding: 0 14px 14px !important; }
+      /* ── Section spacing — smaller phones ── */
+      /* Further reduce to 32px on very small screens */
+      .section { padding: 32px 0 !important; }
+      .final-cta { padding: 48px 0 !important; }
     }
     @media (max-width: 1024px) {
       .price-card.highlight { transform: none; }
@@ -1321,8 +1337,8 @@
 ════════════════════════════════════════════════════════════════════════ -->
 <section id="hero-web3">
   <!-- Background video -->
-  <video class="video-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4"
-    autoplay muted loop playsinline preload="none" aria-hidden="true"></video>
+  <video id="bgVideo" class="video-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4"
+    autoplay muted loop playsinline preload="none" poster="assets/videos/bg-poster.jpg" aria-hidden="true"></video>
 
   <!-- 50% black overlay -->
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1;"></div>
@@ -1375,13 +1391,13 @@
           <span class="price-sparkle ps-4"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="rgba(212,168,67,0.9)"/></svg></span>
           <span class="price-sparkle ps-5"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="rgba(212,168,67,0.65)"/></svg></span>
           <div class="hero-price-main">
-            <span class="hero-price-num">3310</span>
-            <span class="hero-price-cur">ج.م</span>
+            <span class="hero-price-num" id="priceNum1">3310</span>
+            <span class="hero-price-cur" id="priceCur1">ج.م</span>
           </div>
         </div>
         <div class="hero-price-orig">
-          <span class="strike">10345 ج.م</span>
-          <span>خصم 68%</span>
+          <span class="strike" id="priceOrig1">10345 ج.م</span>
+          <span id="priceDiscount1">خصم 68%</span>
         </div>
       </div>
 
@@ -1404,7 +1420,7 @@
   <!-- Video Section -->
   <div class="video-section">
     <div class="video-section-inner" onclick="openVideoModal()">
-      <video id="heroVideo" loop playsinline muted preload="metadata" poster="assets/videos/hero-poster.jpg" style="width:100%;height:auto;display:block;">
+      <video id="heroVideo" autoplay loop playsinline muted preload="metadata" poster="assets/videos/hero-poster.jpg" style="width:100%;height:auto;display:block;">
         <source src="assets/videos/tadarab-landing-page.mp4" type="video/mp4">
       </video>
       <!-- Fan curtain overlay — TOP -->
@@ -1483,14 +1499,14 @@
 
         <!-- Numbered pain points -->
         <div>
-          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.25);">
             <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.7);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">01</span>
             <div>
               <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(19px,2vw,24px);font-weight:700;margin:0 0 8px;">تتأخر المواعيد!</h3>
               <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.5);font-size:clamp(14px,1.2vw,16px);margin:0;line-height:1.8;">الجداول الزمنية تنهار مع أول تعديل في المتطلبات</p>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="display:flex;align-items:center;gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.25);">
             <span style="font-family:var(--font-en);font-size:clamp(40px,5vw,60px);font-weight:800;color:rgba(212,168,67,0.7);line-height:1;flex-shrink:0;min-width:56px;text-align:center;">02</span>
             <div>
               <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(19px,2vw,24px);font-weight:700;margin:0 0 8px;">تتغير الأولويات!</h3>
@@ -1537,28 +1553,36 @@
         </p>
       </div>
 
-      <!-- Course highlights list -->
-      <div class="agile-bullets" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px 32px;max-width:700px;margin:0 auto 52px;direction:rtl;">
-        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">ساعتين فقط لتفهم أهم مبادئ الأجايل بشكل واضح ومبسط</span>
+      <!-- Three Agile benefit cards -->
+      <div class="agile-icon-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;direction:rtl;">
+
+        <div style="position:relative;background:linear-gradient(145deg,rgba(212,168,67,0.08) 0%,rgba(0,4,13,0.6) 100%);border:1px solid rgba(212,168,67,0.25);border-radius:24px;padding:44px 32px 36px;text-align:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);"></div>
+          <div style="width:72px;height:72px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 0 24px rgba(212,168,67,0.15);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(18px,1.8vw,22px);font-weight:800;margin:0 0 14px;line-height:1.4;">التكيف مع التغيير</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(14px,1.2vw,16px);line-height:2;margin:0;">بدلاً من مقاومة التغيير، تتعلم كيف تجعله في صالحك وتستفيد منه</p>
         </div>
-        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">مناسبة للمبتدئين وكل من يرغب في دخول عالم Agile</span>
+
+        <div style="position:relative;background:linear-gradient(145deg,rgba(212,168,67,0.08) 0%,rgba(0,4,13,0.6) 100%);border:1px solid rgba(212,168,67,0.25);border-radius:24px;padding:44px 32px 36px;text-align:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);"></div>
+          <div style="width:72px;height:72px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 0 24px rgba(212,168,67,0.15);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(18px,1.8vw,22px);font-weight:800;margin:0 0 14px;line-height:1.4;">تسليم قيمة بشكل تدريجي ومستمر</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(14px,1.2vw,16px);line-height:2;margin:0;">تُسلّم نتائج حقيقية وملموسة في كل مرحلة دون انتظار نهاية المشروع</p>
         </div>
-        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">ابدأ التطبيق من أول يوم</span>
+
+        <div style="position:relative;background:linear-gradient(145deg,rgba(212,168,67,0.08) 0%,rgba(0,4,13,0.6) 100%);border:1px solid rgba(212,168,67,0.25);border-radius:24px;padding:44px 32px 36px;text-align:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);"></div>
+          <div style="width:72px;height:72px;background:rgba(212,168,67,0.12);border:1px solid rgba(212,168,67,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 0 24px rgba(212,168,67,0.15);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-ar);color:#fff;font-size:clamp(18px,1.8vw,22px);font-weight:800;margin:0 0 14px;line-height:1.4;">إدارة المشروع بمرونة وثقة</h3>
+          <p style="font-family:var(--font-ar);color:rgba(255,255,255,0.55);font-size:clamp(14px,1.2vw,16px);line-height:2;margin:0;">تتحكم في مشروعك بثقة حتى عند مواجهة الغموض والتعقيد</p>
         </div>
-        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">بدون تعقيد أو تنظير</span>
-        </div>
-        <div class="agile-bullet-item" style="display:flex;align-items:flex-start;gap:10px;">
-          <span style="color:#D4A843;font-size:20px;line-height:1.6;flex-shrink:0;">✦</span>
-          <span style="font-family:var(--font-ar);font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,0.9);">أمثلة وحالات واقعية</span>
-        </div>
+
       </div>
 
     </div>
@@ -1577,7 +1601,7 @@
           في بيئة عمل تتغير بسرعة...<br>
           <span style="color:#D4A843;">الطريقة التقليدية لم تعد كافية.</span>
         </h2>
-        <p style="font-family:var(--font-ar);font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,0.55);line-height:2;margin:0;">
+        <p style="font-family:var(--font-ar);font-size:clamp(17px,1.7vw,21px);color:rgba(255,255,255,0.55);line-height:2;margin:0;">
           المشاريع اليوم لا تفشل بسبب ضعف التخطيط،<br>بل بسبب عدم القدرة على التكيف مع التغيير.
         </p>
       </div>
@@ -1625,42 +1649,42 @@
         <div class="learn-slider-track" id="learnTrack">
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668551.webp" alt="فهم مفهوم إدارة المشاريع المرنة"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668551.webp" alt="فهم مفهوم إدارة المشاريع المرنة"></div>
             <div class="learn-card-body"><h3>فهم مفهوم إدارة المشاريع المرنة (Agile)</h3><p>اكتشف ما يعنيه الأجايل حقاً وكيف يُحدث فرقاً جوهرياً في طريقة إدارة المشاريع</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668525.webp" alt="قيم ومبادئ الأجايل"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668525.webp" alt="قيم ومبادئ الأجايل"></div>
             <div class="learn-card-body"><h3>قيم ومبادئ الأجايل وأثرها في إدارة المشاريع</h3><p>تعرّف على القيم الأربع التي يقوم عليها الأجايل وكيف تُطبَّق على أرض الواقع</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668517.webp" alt="التمييز بين الإدارة التقليدية والإدارة المرنة"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668517.webp" alt="التمييز بين الإدارة التقليدية والإدارة المرنة"></div>
             <div class="learn-card-body"><h3>التمييز بين الإدارة التقليدية والإدارة المرنة</h3><p>تعلّم متى تختار الأسلوب المرن ومتى يكون التقليدي أنسب لطبيعة مشروعك</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668530.webp" alt="الفوائد العملية للأجايل"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668530.webp" alt="الفوائد العملية للأجايل"></div>
             <div class="learn-card-body"><h3>الفوائد العملية للأجايل في تسريع الإنجاز وتحسين النتائج</h3><p>اكتشف كيف يُقلّص الأجايل الهدر، يُسرّع التسليم، ويرفع مستوى رضا العملاء</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/7228778.webp" alt="أهم ممارسات الأجايل الشائعة"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/7228778.webp" alt="أهم ممارسات الأجايل الشائعة"></div>
             <div class="learn-card-body"><h3>أهم ممارسات الأجايل الشائعة في بيئات العمل الحديثة</h3><p>تعرّف على Scrum وKanban وغيرها من الأطر العملية الأكثر استخداماً</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668515.webp" alt="تعلم أساليب التخطيط المرن"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668515.webp" alt="تعلم أساليب التخطيط المرن"></div>
             <div class="learn-card-body"><h3>تعلم أساليب التخطيط المرن وإدارة المراحل بفعالية</h3><p>أتقن Sprint Planning والتخطيط التكراري لتسليم قيمة حقيقية في كل مرحلة</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668538.webp" alt="فهم آليات المتابعة المستمرة"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668538.webp" alt="فهم آليات المتابعة المستمرة"></div>
             <div class="learn-card-body"><h3>فهم آليات المتابعة المستمرة وتقييم التقدم داخل المشروع</h3><p>تعلّم كيف تقيس سرعة الفريق وتتابع تقدم المشروع</p></div>
           </div>
 
           <div class="learn-card">
-            <div class="learn-card-visual"><img loading="lazy" class="learn-illustration" src="assets/icons/11668534.webp" alt="اكتساب مهارات التعديل الذكي"></div>
+            <div class="learn-card-visual"><img loading="lazy" decoding="async" width="280" height="280" class="learn-illustration" src="assets/icons/11668534.webp" alt="اكتساب مهارات التعديل الذكي"></div>
             <div class="learn-card-body"><h3>اكتساب مهارات التعديل الذكي لمسار المشروع عند تغيّر المتطلبات</h3><p>تعلّم كيف تستجيب للتغيير بذكاء دون الإخلال بالجدول الزمني أو جودة المنتج</p></div>
           </div>
 
@@ -2025,7 +2049,7 @@
       <h2 class="text-center">احصل على الدورة <span class="arc-underline" id="cta-now-word">الآن<svg class="au-svg" viewBox="0 0 300 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cta-grad" x1="1" y1="0" x2="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#D4A843" stop-opacity="0"/><stop offset="10%" stop-color="#D4A843" stop-opacity="1"/><stop offset="90%" stop-color="#D4A843" stop-opacity="1"/><stop offset="100%" stop-color="#D4A843" stop-opacity="0"/></linearGradient></defs><path d="M 298,11 C 240,1 60,1 2,11" stroke="url(#cta-grad)"/></svg></span></h2>
       <div style="display:grid;grid-template-columns:1fr;max-width:400px;margin:40px auto 0; width:100%;">
         <div class="price-card highlight">
-          <div class="price-badge">خصم 68%</div>
+          <div class="price-badge" id="priceBadge">خصم 68%</div>
           <div style="margin-bottom:24px;">
             <div class="price-title" style="margin-bottom:12px;">سعر الدورة</div>
             <div class="price-sparkle-wrap" style="display:inline-block;">
@@ -2036,13 +2060,13 @@
               <span class="price-sparkle ps-4"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2L13.09 9.26L20 8.27L14.18 13.01L16.18 20L12 15.77L7.82 20L9.82 13.01L4 8.27L10.91 9.26Z" fill="rgba(255,255,255,0.85)"/></svg></span>
               <span class="price-sparkle ps-5"><svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" fill="#D4A843"/></svg></span>
               <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
-                <span style="font-size:52px;font-weight:900;color:#fff;font-family:var(--font-en);line-height:1;">3310</span>
-                <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">ج.م</span>
+                <span id="priceNum2" style="font-size:52px;font-weight:900;color:#fff;font-family:var(--font-en);line-height:1;">3310</span>
+                <span id="priceCur2" style="font-size:20px;font-weight:700;color:rgba(255,255,255,0.75);">ج.م</span>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:10px;">
-              <span style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">10345 ج.م</span>
-              <span style="color:var(--text-secondary);font-size:14px;">(خصم 68%)</span>
+              <span id="priceOrig2" style="text-decoration:line-through;color:var(--text-secondary);font-family:var(--font-en);font-size:16px;">10345 ج.م</span>
+              <span id="priceDiscount2" style="color:var(--text-secondary);font-size:14px;">(خصم 68%)</span>
             </div>
           </div>
           <ul class="price-features">
@@ -2062,7 +2086,7 @@
   <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
-      <h2 class="text-center">الأسئلة الشائعة</h2>
+      <h2 class="text-center" style="font-size:clamp(36px,5vw,60px);">الأسئلة الشائعة</h2>
       <div class="faq-container">
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>ما هي مدة الدورة؟</span><span class="faq-toggle">+</span></div><div class="faq-a">تتكون الدورة من 9 دروس تدريبية، بإجمالي <strong>2 ساعة و5 دقائق</strong> من المحتوى المكثف والعملي.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>هل أحتاج خبرة سابقة في Agile؟</span><span class="faq-toggle">+</span></div><div class="faq-a">لا، لا تحتاج أي خبرة سابقة. هذه الدورة مصممة للمبتدئين وتبدأ معك من الصفر، وتشرح لك مفاهيم Agile بطريقة بسيطة وعملية.</div></div>
@@ -2286,122 +2310,124 @@
 
     /* ── receive burst on the final button ── */
     function triggerReceive() {
+      // Pause the continuous pulse so the button is at scale(1) when we measure
+      finalBtn.style.animation = 'none';
       finalBtn.classList.remove('cta-receive');
-      void finalBtn.offsetWidth;
+      void finalBtn.offsetWidth; // force reflow — button is now exactly at scale(1)
+
+      // Now start the receive animation
       finalBtn.classList.add('cta-receive');
-      setTimeout(function () { finalBtn.classList.remove('cta-receive'); }, 800);
-      var t = finalBtn.getBoundingClientRect();
+
+      // Restore the pulse after the receive finishes
+      setTimeout(function () {
+        finalBtn.classList.remove('cta-receive');
+        finalBtn.style.animation = '';
+      }, 800);
+
+      // Measure both rects in the same coordinate space so Safari position:fixed
+      // quirks cancel out — we only need the *relative* offset inside finalCta.
+      var btnRect     = finalBtn.getBoundingClientRect();
+      var sectionRect = finalCta.getBoundingClientRect();
+
       var ring = document.createElement('span');
       ring.className = 'cta-ring';
       ring.style.cssText = [
-        'position:fixed',
-        'left:'   + (t.left   - 3) + 'px',
-        'top:'    + (t.top    - 3) + 'px',
-        'width:'  + (t.width  + 6) + 'px',
-        'height:' + (t.height + 6) + 'px',
-        'border-radius:' + (t.height / 2 + 3) + 'px',
-        'z-index:9998'
+        'position:absolute',
+        'left:'   + (btnRect.left - sectionRect.left - 4) + 'px',
+        'top:'    + (btnRect.top  - sectionRect.top  - 4) + 'px',
+        'width:'  + (btnRect.width  + 8) + 'px',
+        'height:' + (btnRect.height + 8) + 'px',
+        'border-radius:' + (btnRect.height / 2 + 4) + 'px',
+        'z-index:99999',
+        'transform-origin:center center'
       ].join(';');
-      document.body.appendChild(ring);
-      setTimeout(function () { if (ring.parentNode) ring.parentNode.removeChild(ring); }, 700);
+
+      // Temporarily lift overflow:hidden so the burst ring can expand freely
+      var prevOverflow = finalCta.style.overflow;
+      finalCta.style.overflow = 'visible';
+      finalCta.appendChild(ring);
+
+      setTimeout(function () {
+        if (ring.parentNode) ring.parentNode.removeChild(ring);
+        finalCta.style.overflow = prevOverflow;
+      }, 750);
     }
 
-    /* ── MERGE: spring-lerp chase loop, tracks final button live every frame ──
-       Triggers BEFORE the final button is visible so the user sees the full journey.
-       animCX/animCY/animSc are persistent and survive state changes.           */
+    /* ── MERGE: rAF loop that tracks the final button's live position every frame ── */
     function startMerge() {
       if (state !== 'visible') return;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
       state = 'merging';
-      receiveFired = false;
 
-      // Boot animated position at current home
-      var hc = homeCenter();
-      animCX = hc.x;
-      animCY = hc.y;
-      animSc = 1;
+      var duration  = 220;
+      var startTime = null;
 
+      // Snap to home, raise above all content, then measure start center
       wrap.style.transition    = 'none';
-      wrap.style.pointerEvents = 'none';
+      wrap.style.transform     = 'translateX(-50%) translateY(0)';
       wrap.style.opacity       = '1';
+      wrap.style.zIndex        = '99999';
+      wrap.style.pointerEvents = 'none';
+      void wrap.offsetWidth;
 
-      if (rafId) cancelAnimationFrame(rafId);
+      var wRect  = wrap.getBoundingClientRect();
+      var startCX = wRect.left + wRect.width  / 2;  // home center-x
+      var startCY = wRect.top  + wRect.height / 2;  // home center-y
 
-      function frame() {
-        if (state !== 'merging') return; // cancelled externally
+      function frame(ts) {
+        if (state !== 'merging') return;
+        if (!startTime) startTime = ts;
 
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var ease     = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+
+        // Sample the final button's CURRENT position on every frame so we always land on it
         var tRect    = finalBtn.getBoundingClientRect();
         var targetCX = tRect.left + tRect.width  / 2;
         var targetCY = tRect.top  + tRect.height / 2;
-        var wh       = wrap.offsetHeight || 52;
-        var targetSc = Math.min(tRect.width / wrap.offsetWidth, tRect.height / wh);
-
-        // Smooth spring-lerp: 8 % per frame — produces ease-in-out feel
-        var LF = 0.08;
-        animCX += (targetCX - animCX) * LF;
-        animCY += (targetCY - animCY) * LF;
-        animSc += (targetSc - animSc) * LF;
-
-        var dist = Math.sqrt(
-          (targetCX - animCX) * (targetCX - animCX) +
-          (targetCY - animCY) * (targetCY - animCY)
+        var targetSc = Math.min(
+          tRect.width  / (wRect.width  || 1),
+          tRect.height / (wRect.height || 1)
         );
+        targetSc = Math.max(0.6, Math.min(1.4, targetSc));
 
-        // Stay fully visible during travel; fade only in the last 55 px
-        var opacity = dist < 55 ? Math.max(0, dist / 55) : 1;
+        var cx = startCX + (targetCX - startCX) * ease;
+        var cy = startCY + (targetCY - startCY) * ease;
+        var sc = 1       + (targetSc - 1)       * ease;
 
-        wrap.style.transform = buildTransform(animCX, animCY, animSc);
-        wrap.style.opacity   = opacity.toFixed(3);
+        // dx/dy are deltas from the home center
+        var dx = cx - startCX;
+        var dy = cy - startCY;
 
-        // Snapped close enough → merge complete
-        if (!receiveFired && dist < 5) {
-          receiveFired     = true;
-          state            = 'merged';
-          wrap.style.opacity = '0';
+        wrap.style.transform = 'translateX(calc(-50% + ' + dx.toFixed(1) + 'px)) translateY(' + dy.toFixed(1) + 'px) scale(' + sc.toFixed(3) + ')';
+
+        if (progress < 1) {
+          rafId = requestAnimationFrame(frame);
+        } else {
+          // Landed — instantly hide the float button and pulse the real one
+          rafId = null;
+          wrap.style.transition = 'none';
+          wrap.style.opacity    = '0';
+          wrap.style.zIndex     = '999';
+          state = 'merged';
           triggerReceive();
-          rafId = null;
-          return;
         }
-
-        // Final button scrolled back off-screen downward → abort, float back home
-        if (tRect.top > window.innerHeight + 60) {
-          state = 'visible';
-          setWrap(
-            'transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
-            'translateX(-50%) translateY(0)', 1, 'auto'
-          );
-          rafId = null;
-          return;
-        }
-
-        rafId = requestAnimationFrame(frame);
       }
 
       rafId = requestAnimationFrame(frame);
     }
 
-    /* ── SHOW: rise from below, or emerge from the final-button's position ── */
+    /* ── SHOW: rise from below ── */
     function show() {
       if (state === 'visible') return;
       if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-      var fromMerge = (state === 'merged' || state === 'merging');
       state = 'visible';
-
-      if (fromMerge) {
-        // Re-use current animCX/animCY (wherever the button ended up) as emerge start
-        setWrap('none', buildTransform(animCX, animCY, animSc), 0, 'none');
-        void wrap.offsetWidth;
-        setWrap(
-          'transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease 0.06s',
-          'translateX(-50%) translateY(0)', 1, 'auto'
-        );
-      } else {
-        setWrap('none', 'translateX(-50%) translateY(100px)', 0, 'none');
-        void wrap.offsetWidth;
-        setWrap(
-          'transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.45s ease',
-          'translateX(-50%) translateY(0)', 1, 'auto'
-        );
-      }
+      setWrap('none', 'translateX(-50%) translateY(100px)', 0, 'none');
+      void wrap.offsetWidth;
+      setWrap(
+        'transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.45s ease',
+        'translateX(-50%) translateY(0)', 1, 'auto'
+      );
     }
 
     /* ── HIDE ── */
@@ -2418,28 +2444,15 @@
       var heroBottom = hero ? hero.getBoundingClientRect().bottom + scrollY : 400;
       var pastHero   = scrollY > heroBottom - 200;
 
-      // Kick off merge early — when the final-cta SECTION is ~200 px below the fold
-      // (final button is still off-screen but on its way up)
-      var ctaRect       = finalCta.getBoundingClientRect();
-      var ctaApproaching = ctaRect.top < window.innerHeight + 200;
+      // Kick off merge when the final CTA BUTTON is near the floating button's home zone
+      var btnRect        = finalBtn.getBoundingClientRect();
+      var floatCenterY   = window.innerHeight - 28 - (wrap.offsetHeight / 2);
+      var ctaApproaching = (btnRect.top + btnRect.height / 2) < floatCenterY + 60;
 
       if (ctaApproaching) {
         if (state === 'visible') startMerge();
-        // If already merging/merged, leave it alone
       } else if (pastHero) {
-        // Section has scrolled back below trigger line
-        if (state === 'merging') {
-          // Button is mid-flight; let the abort-logic inside rAF handle it
-          // (it checks tRect.top > innerHeight + 60) — force it here:
-          state = 'visible';
-          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-          setWrap(
-            'transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
-            'translateX(-50%) translateY(0)', 1, 'auto'
-          );
-        } else {
-          show();
-        }
+        show(); // re-emerge from any state (show() is idempotent when already visible)
       } else {
         // Above the hero
         if (state === 'merged' || state === 'merging') {
@@ -2515,6 +2528,16 @@
   function init() {
     initScrollAnimations();
     initTypewriter();
+
+    // Force background video to play (poster + preload=none can block autoplay)
+    var bgVideo = document.getElementById('bgVideo');
+    if (bgVideo) {
+      bgVideo.play().catch(function() {
+        // Retry once on first user interaction
+        document.addEventListener('click', function() { bgVideo.play(); }, { once: true });
+        document.addEventListener('touchstart', function() { bgVideo.play(); }, { once: true });
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -2789,6 +2812,56 @@
 })();
 </script>
 
+<!-- Price from backend API -->
+<script>
+(function() {
+  // Hide price areas immediately so hardcoded defaults never flash to the user.
+  // They fade in once the real values are ready (or on failure, show as-is).
+  var priceContainers = [
+    document.querySelector('.hero-price-block'),
+    document.querySelector('#priceNum2') && document.querySelector('#priceNum2').closest('.price-sparkle-wrap')
+  ];
+  priceContainers.forEach(function(el) {
+    if (el) { el.style.opacity = '0'; el.style.transition = 'opacity 0.35s ease'; }
+  });
+
+  function revealPrices() {
+    priceContainers.forEach(function(el) { if (el) el.style.opacity = '1'; });
+  }
+
+  function applyPrice(d) {
+    var price     = d.price     || '';
+    var currency  = d.currency  || '';
+    var origPrice = d.origPrice || '';
+    var discount  = d.discount  || '';
+    var el;
+    if (price) {
+      el = document.getElementById('priceNum1'); if (el) el.textContent = price;
+      el = document.getElementById('priceNum2'); if (el) el.textContent = price;
+    }
+    if (currency) {
+      el = document.getElementById('priceCur1'); if (el) el.textContent = currency;
+      el = document.getElementById('priceCur2'); if (el) el.textContent = currency;
+    }
+    if (origPrice && currency) {
+      el = document.getElementById('priceOrig1'); if (el) el.textContent = origPrice + ' ' + currency;
+      el = document.getElementById('priceOrig2'); if (el) el.textContent = origPrice + ' ' + currency;
+    }
+    if (discount) {
+      var badgeText = discount.includes('خصم') ? discount : 'خصم ' + discount;
+      if (!badgeText.includes('%')) badgeText += '%';
+      el = document.getElementById('priceDiscount1'); if (el) el.textContent = badgeText;
+      el = document.getElementById('priceDiscount2'); if (el) el.textContent = '(' + badgeText + ')';
+      el = document.getElementById('priceBadge');     if (el) el.textContent = badgeText;
+    }
+  }
+
+  fetch('/api/price')
+    .then(function(r) { return r.json(); })
+    .then(function(d) { applyPrice(d); revealPrices(); })
+    .catch(function() { revealPrices(); /* show hardcoded defaults on failure */ });
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة السعر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=block" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Almarai', 'Segoe UI', sans-serif;
+      background: #05060E;
+      background-image:
+        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(212,168,67,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 30% at 90% 80%, rgba(190,22,34,0.05) 0%, transparent 60%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 24px;
+      padding: 48px 40px 40px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,168,67,0.05) inset;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .header h1 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .header p  { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+    /* ── Current price badge ── */
+    .current-badge {
+      background: linear-gradient(135deg, rgba(212,168,67,0.08), rgba(212,168,67,0.03));
+      border: 1px solid rgba(212,168,67,0.2);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      line-height: 1.6;
+    }
+    .current-badge strong { color: #D4A843; font-size: 22px; display: block; margin-top: 2px; }
+
+    /* ── Label ── */
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Inputs ── */
+    .field { margin-bottom: 20px; }
+
+    input[type="password"],
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 16px;
+      font-family: inherit;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      direction: ltr;
+      text-align: right;
+    }
+    input:focus {
+      border-color: rgba(212,168,67,0.5);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 0 0 3px rgba(212,168,67,0.08);
+    }
+    input::placeholder { color: rgba(255,255,255,0.2); }
+    /* number-type spinners removed — price inputs use type="text" inputmode="numeric" */
+
+    /* ── Price + currency row ── */
+    .price-row { display: flex; gap: 12px; align-items: flex-start; }
+    .price-row .field.price-field { flex: 1; }
+
+    /* ── Currency pills (replaces dropdown) ── */
+    .currency-group { margin-bottom: 20px; }
+    .currency-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .currency-pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s;
+      user-select: none;
+    }
+    .currency-pill:hover {
+      border-color: rgba(212,168,67,0.35);
+      color: rgba(212,168,67,0.8);
+      background: rgba(212,168,67,0.06);
+    }
+    .currency-pill.active {
+      background: rgba(212,168,67,0.15);
+      border-color: rgba(212,168,67,0.55);
+      color: #D4A843;
+      box-shadow: 0 0 0 3px rgba(212,168,67,0.08);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 28px 0;
+    }
+
+    /* ── Save button ── */
+    .btn-save {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #D4A843 0%, #b8892e 100%);
+      border: none;
+      border-radius: 12px;
+      color: #000;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(212,168,67,0.25);
+      margin-top: 4px;
+    }
+    .btn-save:hover  { opacity: 0.92; box-shadow: 0 12px 32px rgba(212,168,67,0.35); }
+    .btn-save:active { transform: scale(0.98); }
+    .btn-save:disabled { opacity: 0.35; cursor: not-allowed; box-shadow: none; }
+
+    /* ── Login button ── */
+    .btn-login {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #D4A843 0%, #b8892e 100%);
+      border: none;
+      border-radius: 12px;
+      color: #000;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 8px 24px rgba(212,168,67,0.25);
+    }
+    .btn-login:hover  { opacity: 0.92; }
+    .btn-login:active { transform: scale(0.98); }
+    .btn-login:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ── Messages ── */
+    .msg {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+    .msg.success { background: rgba(34,197,94,0.1);  border: 1px solid rgba(34,197,94,0.25); color: #4ade80; }
+    .msg.error   { background: rgba(239,68,68,0.1);  border: 1px solid rgba(239,68,68,0.25); color: #f87171; }
+
+    /* ── Logout ── */
+    .logout-btn {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.25);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      margin-top: 24px;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .logout-btn:hover { color: rgba(255,255,255,0.5); }
+
+    #loginSection, #editorSection { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-icon">
+      <img src="../3dicons-dollar-dynamic-color (1).png" alt="" style="width:80px;height:80px;object-fit:contain;">
+    </div>
+    <h1>إدارة السعر</h1>
+    <p>تحديث سعر الدورة والعملة</p>
+  </div>
+
+  <!-- ── Login ── -->
+  <div id="loginSection">
+    <div class="field">
+      <label>كلمة المرور</label>
+      <input type="password" id="passwordInput" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="btn-login" id="loginBtn">دخول</button>
+    <div class="msg" id="loginMsg"></div>
+  </div>
+
+  <!-- ── Editor ── -->
+  <div id="editorSection">
+
+    <div class="current-badge" id="currentBadge">
+      السعر الحالي<strong>—</strong>
+    </div>
+
+    <!-- Price + Currency -->
+    <div class="price-row">
+      <div class="field price-field">
+        <label>السعر الجديد</label>
+        <input type="text" inputmode="numeric" id="priceInput" placeholder="3310" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+      </div>
+    </div>
+
+    <div class="currency-group">
+      <label>العملة</label>
+      <div class="currency-pills" id="currencyPills">
+        <span class="currency-pill active" data-value="ج.م">ج.م</span>
+        <span class="currency-pill" data-value="ر.س">ر.س</span>
+        <span class="currency-pill" data-value="د.إ">د.إ</span>
+        <span class="currency-pill" data-value="د.ك">د.ك</span>
+        <span class="currency-pill" data-value="$">$</span>
+        <span class="currency-pill" data-value="€">€</span>
+      </div>
+      <input type="hidden" id="currencyInput" value="ج.م">
+    </div>
+
+    <div class="field">
+      <label>السعر الأصلي (قبل الخصم)</label>
+      <input type="text" inputmode="numeric" id="origPriceInput" placeholder="10345" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+    </div>
+
+    <div class="field">
+      <label>نسبة الخصم</label>
+      <input type="text" id="discountInput" placeholder="68%">
+    </div>
+
+    <div class="divider"></div>
+
+    <button class="btn-save" id="saveBtn">حفظ التغييرات</button>
+    <div class="msg" id="saveMsg"></div>
+
+    <button class="logout-btn" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+</div>
+
+<script>
+  const API           = '/api';
+  const TOKEN_KEY     = 'price_admin_token';
+  const loginSection  = document.getElementById('loginSection');
+  const editorSection = document.getElementById('editorSection');
+  const passwordInput = document.getElementById('passwordInput');
+  const loginBtn      = document.getElementById('loginBtn');
+  const loginMsg      = document.getElementById('loginMsg');
+  const saveBtn       = document.getElementById('saveBtn');
+  const saveMsg       = document.getElementById('saveMsg');
+  const currentBadge  = document.getElementById('currentBadge');
+
+  function getToken() { return sessionStorage.getItem(TOKEN_KEY); }
+  function setToken(t) { sessionStorage.setItem(TOKEN_KEY, t); }
+  function clearToken() { sessionStorage.removeItem(TOKEN_KEY); }
+
+  // ── Currency pills ──
+  document.getElementById('currencyPills').addEventListener('click', function(e) {
+    const pill = e.target.closest('.currency-pill');
+    if (!pill) return;
+    document.querySelectorAll('.currency-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    document.getElementById('currencyInput').value = pill.dataset.value;
+  });
+
+  function setCurrency(val) {
+    document.querySelectorAll('.currency-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.value === val);
+    });
+    document.getElementById('currencyInput').value = val;
+  }
+
+  function showMsg(el, text, type) {
+    el.textContent = text;
+    el.className = 'msg ' + type;
+    el.style.display = 'block';
+    if (type === 'success') setTimeout(() => { el.style.display = 'none'; }, 3000);
+  }
+
+  async function loadCurrentPrice() {
+    try {
+      const res = await fetch(API + '/price');
+      const d   = await res.json();
+      currentBadge.innerHTML = `السعر الحالي<strong>${d.price || '—'} ${d.currency || ''}</strong>`;
+      document.getElementById('priceInput').value     = d.price     || '';
+      document.getElementById('origPriceInput').value = d.origPrice || '';
+      document.getElementById('discountInput').value  = d.discount  || '';
+      setCurrency(d.currency || 'ج.م');
+    } catch(e) {
+      currentBadge.innerHTML = 'تعذّر تحميل السعر<strong>—</strong>';
+    }
+  }
+
+  function showEditor() {
+    loginSection.style.display  = 'none';
+    editorSection.style.display = 'block';
+    loadCurrentPrice();
+  }
+
+  function showLogin() {
+    loginSection.style.display  = 'block';
+    editorSection.style.display = 'none';
+    passwordInput.value = '';
+  }
+
+  // Check existing token on load — verify with server so a restart doesn't
+  // silently leave the user stuck until they try to save.
+  (async () => {
+    const token = getToken();
+    if (!token) { showLogin(); return; }
+    try {
+      const res = await fetch(API + '/verify', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      if (res.ok) {
+        showEditor();
+      } else {
+        clearToken();
+        showLogin();
+        showMsg(loginMsg, 'انتهت الجلسة — يرجى تسجيل الدخول مرة أخرى', 'error');
+      }
+    } catch(e) {
+      // Network error — show editor anyway; save will surface connectivity issues
+      showEditor();
+    }
+  })();
+
+  // Auto-expire check every minute
+  setInterval(async () => {
+    if (!getToken() && editorSection.style.display !== 'none') {
+      showLogin();
+    }
+  }, 60000);
+
+  loginBtn.addEventListener('click', async () => {
+    const pw = passwordInput.value.trim();
+    if (!pw) { showMsg(loginMsg, 'أدخل كلمة المرور', 'error'); return; }
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'جاري التحقق...';
+    try {
+      const res  = await fetch(API + '/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setToken(data.token);
+        showEditor();
+      } else {
+        showMsg(loginMsg, data.error || 'خطأ في تسجيل الدخول', 'error');
+        passwordInput.value = '';
+      }
+    } catch(e) {
+      showMsg(loginMsg, 'تعذّر الاتصال بالخادم', 'error');
+    }
+    loginBtn.disabled = false;
+    loginBtn.textContent = 'دخول';
+  });
+
+  passwordInput.addEventListener('keydown', e => { if (e.key === 'Enter') loginBtn.click(); });
+
+  saveBtn.addEventListener('click', async () => {
+    const token = getToken();
+    if (!token) { showLogin(); return; }
+
+    const price     = document.getElementById('priceInput').value.trim();
+    const currency  = document.getElementById('currencyInput').value;
+    const origPrice = document.getElementById('origPriceInput').value.trim();
+    const discount  = document.getElementById('discountInput').value.trim();
+
+    if (!price) { showMsg(saveMsg, 'أدخل السعر', 'error'); return; }
+
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'جاري الحفظ...';
+    try {
+      const res = await fetch(API + '/price', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body: JSON.stringify({ price, currency, origPrice, discount })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        currentBadge.innerHTML = `السعر الحالي<strong>${price} ${currency}</strong>`;
+        showMsg(saveMsg, 'تم حفظ السعر بنجاح ✓', 'success');
+      } else if (res.status === 401) {
+        clearToken();
+        showLogin();
+        showMsg(loginMsg, 'انتهت الجلسة — يرجى تسجيل الدخول مرة أخرى', 'error');
+      } else {
+        showMsg(saveMsg, data.error || 'فشل الحفظ', 'error');
+      }
+    } catch(e) {
+      showMsg(saveMsg, 'تعذّر الاتصال بالخادم', 'error');
+    }
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'حفظ التغييرات';
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    const token = getToken();
+    if (token) {
+      fetch(API + '/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + token } });
+    }
+    clearToken();
+    showLogin();
+  });
+</script>
+</body>
+</html>
